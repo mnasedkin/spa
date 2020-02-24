@@ -11,12 +11,17 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { SpaNavListComponent } from './spa-nav-list/spa-nav-list.component';
+import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
+import { ExperimentsComponent } from './experiments/experiments.component';
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     SpaNavComponent,
-    SpaNavListComponent
+    SpaNavListComponent,
+    MainLayoutComponent,
+    ExperimentsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,8 @@ import { SpaNavListComponent } from './spa-nav-list/spa-nav-list.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
