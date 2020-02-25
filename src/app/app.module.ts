@@ -13,6 +13,8 @@ import { MatListModule } from '@angular/material/list';
 import { SpaNavListComponent } from './spa-nav-list/spa-nav-list.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import {AppRoutingModule} from "./app-routing.module";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 import { ButtonComponent } from './button/button.component';
 import { GalleryLazyLoadComponent } from './gallery-lazy-load/gallery-lazy-load.component';
 import { WinzipAnimationComponent } from './winzip-animation/winzip-animation.component';
@@ -46,6 +48,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatIconModule,
     MatListModule,
     AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     FontAwesomeModule
   ],
   providers: [],
