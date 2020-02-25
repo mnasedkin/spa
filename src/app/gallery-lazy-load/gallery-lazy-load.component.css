@@ -1,7 +1,6 @@
 /*------- Start gallery---------------------------------------------------------------------------------------------*/
 .gallery {
   position: relative;
-  z-index: 15;
   padding: 1rem 0.5rem;
 }
 .gallery--lazy-load {}

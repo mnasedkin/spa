@@ -12,8 +12,8 @@ export const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'help', component: HelpComponent},
   {
-    // path: '', component: FlexLayoutComponent, children: [
-    path: '', component: MainLayoutComponent, children: [
+    path: '', component: FlexLayoutComponent, children: [
+    // path: '', component: MainLayoutComponent, children: [
       {path: 'experiments', component: ExperimentsComponent},
     ]
   }

@@ -1,0 +1,123 @@
+/*----- Start BLOCK MODEL -----------------------------------------------*/
+/*For demonstration */
+header, footer, div, ul, li {
+  margin: 1em;
+  padding: 1em;
+  border: 0.1em solid #864704;
+  position: relative;
+}
+.block__container {
+  font-size: 10px;
+}
+@supports (display: flex) or (display: -webkit-box) {
+  .block__row {
+    position: relative;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+
+    justify-content: center;
+    -webkit-justify-content: center;
+
+    align-items: center;
+    -webkit-align-content: center;
+    -webkit-align-items: center;
+  }
+  .block__column {
+    position: relative;
+    overflow: hidden;
+  }
+}
+.block__text {
+  margin-top: 1em;
+  margin-bottom: 5em;
+}
+.block__text h1,
+.block__text h2,
+.block__text h3,
+.block__text p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.block__img img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+.block__button a {
+  display: inline-block;
+  /*padding: 1.3em 4.5em;*/
+  /*box-shadow: 0 0.5em 1.3em rgba(0, 0, 0, 0.2);*/
+  /*background-color: #6aaa2f;*/
+  /*font-size: 1.75em;*/
+  /*font-weight: 700;*/
+  text-transform: uppercase;
+}
+.block__button a:hover {
+  /*background-color: #538d29;*/
+}
+/*----- End BLOCK MODEL ------------------------------------------------------------*/
+
+
+/*----- Start Styles for this layout -----------------------------------------------*/
+.header {
+  height: 70em;
+  background-image: url("../../../../assets/images/5g.jpg");
+  background-position: top 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+}
+@media (max-width: 1280px) {
+  .header {
+    background-size: cover;
+  }
+}
+
+.gallery {
+
+}
+
+.winzip-animation {
+  background-color: #913895;
+}
+/*----- End Styles for this layout -------------------------------------------------*/
+
+/*------- Start box lift by module ---------------------------------------------------*/
+.scroll {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 10%;
+  right: 0;
+  /*background: url("../../../../assets/images/base.png");*/
+  background-image: url("../../../../assets/images/base.png");
+  background-position: top right;
+  /*background-repeat: no-repeat;*/
+  /*background-attachment: fixed;*/
+  /*background-size: contain;*/
+}
+
+.scroll__runner img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  top: 0;
+
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4000px);
+  }
+}
+
+/*------- End of box lift by module-------------------------------------------------------------------------------*/
