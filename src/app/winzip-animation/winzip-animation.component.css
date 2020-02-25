@@ -1,0 +1,192 @@
+/*------- Start Animation-------------------------------------------------------------------------------------------*/
+.winzip-animation {
+height: 900px;
+}
+
+/*styles for win-zip image that fall down*/
+.winzip-animation__image--top {
+  position: absolute;
+  top: -174px;
+  left: 56%;
+  width: 170px;
+  padding-left: 70px;
+}
+
+.winzip-animation__parts {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+}
+
+.winzip-animation__image--top img {
+  max-width: 100%;
+}
+
+/*------End styles #1--------------------------------------------------------------------------------------------- */
+
+/*------Start styles #2--------------------------------------------------------------------------------------------- */
+/*styles for crushed sven-zip box */
+.polygon {
+  height: 100%;
+}
+
+.polygon__img-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.polygon__triangle {
+  position: absolute;
+  max-width: 300px;
+  bottom: 0;
+  left: 56%;
+}
+
+.polygon__img-wrap[fell='false'] .polygon__triangle {
+  bottom: -22px;
+  left: 56%;
+  -o-transition: transform 1.2s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .3s;
+  -moz-transition: transform 1.2s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .3s;
+  -webkit-transition: transform 1.2s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .3s;
+  transition: transform 1.2s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .3s;
+}
+
+/*!*.animation:hover .polygon__triangle
+transition: transition-property transition-duration transition-timing-function transition-delay;*/
+.polygon__img-wrap[fell='true'] .polygon__triangle {
+  bottom: 0;
+  left: 0;
+  transform: rotate(360deg) scale(0);
+  -o-transform: rotate(360deg) scale(0);
+  -ms-transform: rotate(360deg) scale(0);
+  -moz-transform: rotate(360deg) scale(0);
+  -webkit-transform: rotate(360deg) scale(0);
+
+  -o-transition: transform 1.2s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .3s;
+  -moz-transition: transform 1.2s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .3s;
+  -webkit-transition: transform 1.2s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .3s;
+  transition: transform 1.2s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .3s;
+}
+
+.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--1 {
+  bottom: 40%;
+  left: 10%;
+}
+
+.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--2 {
+  bottom: 60%;
+  left: 10%;
+}
+
+.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--3 {
+  bottom: 55%;
+  left: 10%;
+}
+
+.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--4 {
+  bottom: 30%;
+  left: 10%;
+}
+
+.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--5 {
+  bottom: 25%;
+  left: 20%;
+}
+
+.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--6 {
+  bottom: 20%;
+  left: 30%;
+}
+
+.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--7 {
+  bottom: 15%;
+  left: 40%;
+}
+
+.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--8 {
+  bottom: 10%;
+  left: 90%;
+}
+
+.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--9 {
+  bottom: 5%;
+  left: 90%;
+}
+
+.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--10 {
+  bottom: 0;
+  left: 90%;
+}
+
+.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--11 {
+  bottom: 100%;
+  left: -90%;
+}
+
+.polygon__triangle--1 {
+  -webkit-clip-path: url("#polygon__triangle--1");
+  clip-path: url("#polygon__triangle--1");
+}
+
+.polygon__triangle--2 {
+  -webkit-clip-path: url("#polygon__triangle--2");
+  clip-path: url("#polygon__triangle--2");
+}
+
+.polygon__triangle--3 {
+  -webkit-clip-path: url("#polygon__triangle--3");
+  clip-path: url("#polygon__triangle--3");
+}
+
+.polygon__triangle--4 {
+  -webkit-clip-path: url("#polygon__triangle--4");
+  clip-path: url("#polygon__triangle--4");
+}
+
+.polygon__triangle--5 {
+  -webkit-clip-path: url("#polygon__triangle--5");
+  clip-path: url("#polygon__triangle--5");
+}
+
+.polygon__triangle--6 {
+  -webkit-clip-path: url("#polygon__triangle--6");
+  clip-path: url("#polygon__triangle--6");
+}
+
+.polygon__triangle--7 {
+  -webkit-clip-path: url("#polygon__triangle--7");
+  clip-path: url("#polygon__triangle--7");
+}
+
+.polygon__triangle--8 {
+  -webkit-clip-path: url("#polygon__triangle--8");
+  clip-path: url("#polygon__triangle--8");
+}
+
+.polygon__triangle--9 {
+  -webkit-clip-path: url("#polygon__triangle--9");
+  clip-path: url("#polygon__triangle--9");
+}
+
+.polygon__triangle--10 {
+  -webkit-clip-path: url("#polygon__triangle--10");
+  clip-path: url("#polygon__triangle--10");
+}
+
+.polygon__triangle--11 {
+  -webkit-clip-path: url("#polygon__triangle--11");
+  clip-path: url("#polygon__triangle--11");
+}
+
+.polygon__triangle--12 {
+  -webkit-clip-path: url("#polygon__triangle--12");
+  clip-path: url("#polygon__triangle--12");
+}
+
+.polygon__triangle--13 {
+  -webkit-clip-path: url("#polygon__triangle--12");
+  clip-path: url("#polygon__triangle--12");
+}
+
+/*------- End of Animation-----------------------------------------------------------------------------------------*/

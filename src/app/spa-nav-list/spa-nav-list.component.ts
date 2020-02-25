@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SpaNavItem } from "./spa-nav-item";
+import { SpaNavItems } from "./spa-nav-item";
 import { ITEMS } from "../config/nav-config";
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-spa-nav-list',
@@ -8,7 +9,7 @@ import { ITEMS } from "../config/nav-config";
   styleUrls: ['./spa-nav-list.component.css']
 })
 export class SpaNavListComponent implements OnInit {
-  items: SpaNavItem[];
+  items: SpaNavItems;
   constructor() { }
 
   ngOnInit() {

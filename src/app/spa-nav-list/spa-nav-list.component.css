@@ -1,0 +1,13 @@
+.bottom__menu {
+  /*position: relative;*/
+}
+.bottom__menu.bottom__menu--before-line::before {
+  content: '';
+  /*position: absolute;*/
+  display: block;
+  height: 1px;
+  width: 80%;
+  margin: 4px 0 4px 9px;
+  background: #dbdbdb;
+  clear: both;
+}

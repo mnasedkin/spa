@@ -1,3 +1,9 @@
 <mat-nav-list>
-  <a mat-list-item *ngFor="let item of items" href="{{item.url}}">{{item.name}}</a>
+  <div class="top__menu">
+    <a mat-list-item *ngFor="let item of items.top" routerLink="{{item.url}}" >{{item.name}}</a>
+<!--    <i data-icon="{{item.icon}}"></i>-->
+  </div>
+  <div class="bottom__menu bottom__menu--before-line">
+    <a mat-list-item *ngFor="let item of items.bottom" routerLink="{{item.url}}">{{item.name}}</a>
+  </div>
 </mat-nav-list>

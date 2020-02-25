@@ -1,0 +1,22 @@
+/*------- Start gallery---------------------------------------------------------------------------------------------*/
+.gallery {
+  position: relative;
+  z-index: 15;
+  padding: 1rem 0.5rem;
+}
+.gallery--lazy-load {}
+
+.content__image {
+  width: 60%;
+  margin: 1rem auto 0;
+  text-align: center;
+  background: white;
+}
+.content__image img:first-child {
+  margin-top: 0;
+}
+
+.content__image img {
+  max-width: 100%;
+}
+/*------- End of gallery--------------------------------------------------------------------------------------------*/

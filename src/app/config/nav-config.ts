@@ -1,7 +1,11 @@
-import { SpaNavItem } from "../spa-nav-list/spa-nav-item";
+import {SpaNavItems} from "../spa-nav-list/spa-nav-item";
 
-export const ITEMS: SpaNavItem[] = [
-  {url: '/dashboard/', name: 'Dashboard'},
-  {url: '/help/', name: 'Help'},
-  {url: '/experiments/', name: 'Experiments'}
-];
+export const ITEMS: SpaNavItems = {
+    top: [
+      {url: '/dashboard/', name: 'Dashboard', icon: 'fas fa-table'},
+    ],
+    bottom: [
+      {url: '/help/', name: 'Help', icon: 'fas fa-table"'},
+      {url: '/experiments/', name: 'Experiments', icon: 'fas fa-table'}
+    ]
+  };

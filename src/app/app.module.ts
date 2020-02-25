@@ -12,8 +12,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { SpaNavListComponent } from './spa-nav-list/spa-nav-list.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
-import { ExperimentsComponent } from './experiments/experiments.component';
 import {AppRoutingModule} from "./app-routing.module";
+import { ButtonComponent } from './button/button.component';
+import { GalleryLazyLoadComponent } from './gallery-lazy-load/gallery-lazy-load.component';
+import { WinzipAnimationComponent } from './winzip-animation/winzip-animation.component';
+import { FlexLayoutComponent } from './shared/components/flex-layout/flex-layout.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ExperimentsComponent } from './experiments/experiments.component';
+import { HelpComponent } from './help/help.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +28,13 @@ import {AppRoutingModule} from "./app-routing.module";
     SpaNavComponent,
     SpaNavListComponent,
     MainLayoutComponent,
-    ExperimentsComponent
+    ButtonComponent,
+    GalleryLazyLoadComponent,
+    WinzipAnimationComponent,
+    FlexLayoutComponent,
+    ExperimentsComponent,
+    HelpComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +45,8 @@ import {AppRoutingModule} from "./app-routing.module";
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
