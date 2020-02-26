@@ -24,6 +24,8 @@ import { ExperimentsComponent } from './experiments/experiments.component';
 import { HelpComponent } from './help/help.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WinapiComponent } from './winapi/winapi.component';
+import { SettingsComponent } from './settings/settings.component';
+import { DriverUpdaterComponent } from './driver-updater/driver-updater.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { WinapiComponent } from './winapi/winapi.component';
     ExperimentsComponent,
     HelpComponent,
     DashboardComponent,
-    WinapiComponent
+    WinapiComponent,
+    SettingsComponent,
+    DriverUpdaterComponent
   ],
   imports: [
     BrowserModule,
