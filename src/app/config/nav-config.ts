@@ -6,6 +6,7 @@ export const ITEMS: SpaNavItems = {
     ],
     bottom: [
       {url: '/help/', name: 'Help', icon: 'fas fa-table"'},
-      {url: '/experiments/', name: 'Experiments', icon: 'fas fa-table'}
+      {url: '/experiments/', name: 'Experiments', icon: 'fas fa-table'},
+      {url: '/winapi/', name: 'Windows API', icon: 'fab fa-windows'}
     ]
   };

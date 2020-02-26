@@ -6,11 +6,13 @@ import {DashboardComponent} from "../dashboard/dashboard.component";
 import {HelpComponent} from "../help/help.component";
 import {ExperimentsComponent} from "../experiments/experiments.component";
 import {SpaNavComponent} from "../spa-nav/spa-nav.component";
+import {WinapiComponent} from "../winapi/winapi.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},//Если путь совпадает с корневым роутом, тогда делаем редирект на home
   {path: 'dashboard', component: DashboardComponent},
   {path: 'help', component: HelpComponent},
+  {path: 'winapi', component: WinapiComponent},
   {
     path: '', component: FlexLayoutComponent, children: [
     // path: '', component: MainLayoutComponent, children: [
