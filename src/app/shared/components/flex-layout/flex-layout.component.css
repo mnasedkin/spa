@@ -1,10 +1,10 @@
 /*----- Start BLOCK MODEL -----------------------------------------------*/
 /*For demonstration */
 header, footer, div, ul, li {
-  margin: 1em;
-  padding: 1em;
-  border: 0.1em solid #864704;
-  position: relative;
+  /*margin: 1em;*/
+  /*padding: 1em;*/
+  /*border: 0.1em solid #864704;*/
+  /*position: relative;*/
 }
 .block__container {
   font-size: 10px;
@@ -25,6 +25,8 @@ header, footer, div, ul, li {
     align-items: center;
     -webkit-align-content: center;
     -webkit-align-items: center;
+
+    overflow: hidden;
   }
   .block__column {
     position: relative;
@@ -49,16 +51,9 @@ header, footer, div, ul, li {
 }
 .block__button a {
   display: inline-block;
-  /*padding: 1.3em 4.5em;*/
-  /*box-shadow: 0 0.5em 1.3em rgba(0, 0, 0, 0.2);*/
-  /*background-color: #6aaa2f;*/
-  /*font-size: 1.75em;*/
-  /*font-weight: 700;*/
   text-transform: uppercase;
 }
-.block__button a:hover {
-  /*background-color: #538d29;*/
-}
+.block__button a:hover {}
 /*----- End BLOCK MODEL ------------------------------------------------------------*/
 
 
@@ -94,12 +89,11 @@ header, footer, div, ul, li {
   overflow: hidden;
   width: 10%;
   right: 0;
-  /*background: url("../../../../assets/images/base.png");*/
-  background-image: url("../../../../assets/images/base.png");
+  background-image: url("../../../../assets/images/scroll.png");
   background-position: top right;
-  /*background-repeat: no-repeat;*/
+  background-repeat: repeat-y;
   /*background-attachment: fixed;*/
-  /*background-size: contain;*/
+  background-size: contain;
 }
 
 .scroll__runner img {
@@ -121,3 +115,10 @@ header, footer, div, ul, li {
 }
 
 /*------- End of box lift by module-------------------------------------------------------------------------------*/
+
+/*------- Start for footer -------------------------------------------------------------------------------*/
+.footer.block__row {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+/*------- End for footer ---------------------------------------------------------------------------------*/

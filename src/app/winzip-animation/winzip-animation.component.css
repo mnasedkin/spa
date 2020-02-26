@@ -1,22 +1,17 @@
 /*------- Start Animation-------------------------------------------------------------------------------------------*/
-.winzip-animation {
-height: 900px;
-}
+.winzip-animation {}
 
 /*styles for win-zip image that fall down*/
 .winzip-animation__image--top {
   position: absolute;
-  top: -174px;
-  left: 56%;
+  top: -190px;
   width: 170px;
-  padding-left: 70px;
+  left: 56%;
+  /*padding-left: 70px;*/
 }
 
-.winzip-animation__parts {
-  width: 300px;
-  height: 300px;
-  background-size: cover;
-}
+.winzip-animation__image--bottom {}
+
 
 .winzip-animation__image--top img {
   max-width: 100%;
@@ -27,23 +22,26 @@ height: 900px;
 /*------Start styles #2--------------------------------------------------------------------------------------------- */
 /*styles for crushed sven-zip box */
 .polygon {
-  height: 100%;
+  height: 900px;
+  width: 900px;
 }
 
-.polygon__img-wrap {
+.polygon__img {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  bottom: 0;
+  left: 56%;
+  width: 300px;
+  height: 300px;
+  background-size: cover;
 }
 
 .polygon__triangle {
   position: absolute;
   max-width: 300px;
   bottom: 0;
-  left: 56%;
 }
 
-.polygon__img-wrap[fell='false'] .polygon__triangle {
+.polygon__img[fell='false'] .polygon__triangle {
   bottom: -22px;
   left: 56%;
   -o-transition: transform 1.2s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .3s;
@@ -54,7 +52,7 @@ height: 900px;
 
 /*!*.animation:hover .polygon__triangle
 transition: transition-property transition-duration transition-timing-function transition-delay;*/
-.polygon__img-wrap[fell='true'] .polygon__triangle {
+.polygon__img[fell='true'] .polygon__triangle {
   bottom: 0;
   left: 0;
   transform: rotate(360deg) scale(0);
@@ -69,57 +67,57 @@ transition: transition-property transition-duration transition-timing-function t
   transition: transform 1.2s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .3s;
 }
 
-.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--1 {
+.polygon__img[fell='true'] .polygon__triangle.polygon__triangle--1 {
   bottom: 40%;
   left: 10%;
 }
 
-.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--2 {
+.polygon__img[fell='true'] .polygon__triangle.polygon__triangle--2 {
   bottom: 60%;
   left: 10%;
 }
 
-.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--3 {
+.polygon__img[fell='true'] .polygon__triangle.polygon__triangle--3 {
   bottom: 55%;
   left: 10%;
 }
 
-.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--4 {
+.polygon__img[fell='true'] .polygon__triangle.polygon__triangle--4 {
   bottom: 30%;
   left: 10%;
 }
 
-.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--5 {
+.polygon__img[fell='true'] .polygon__triangle.polygon__triangle--5 {
   bottom: 25%;
   left: 20%;
 }
 
-.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--6 {
+.polygon__img[fell='true'] .polygon__triangle.polygon__triangle--6 {
   bottom: 20%;
   left: 30%;
 }
 
-.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--7 {
+.polygon__img[fell='true'] .polygon__triangle.polygon__triangle--7 {
   bottom: 15%;
   left: 40%;
 }
 
-.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--8 {
+.polygon__img[fell='true'] .polygon__triangle.polygon__triangle--8 {
   bottom: 10%;
   left: 90%;
 }
 
-.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--9 {
+.polygon__img[fell='true'] .polygon__triangle.polygon__triangle--9 {
   bottom: 5%;
   left: 90%;
 }
 
-.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--10 {
+.polygon__img[fell='true'] .polygon__triangle.polygon__triangle--10 {
   bottom: 0;
   left: 90%;
 }
 
-.polygon__img-wrap[fell='true'] .polygon__triangle.polygon__triangle--11 {
+.polygon__img[fell='true'] .polygon__triangle.polygon__triangle--11 {
   bottom: 100%;
   left: -90%;
 }
