@@ -70,30 +70,25 @@ class BlockAnimate {
     _this.scrollPosition = pageYOffset;
     let deltaOffset = delta * multiply;
 
-
-    // console.log('pageYOffset: ', pageYOffset);
-
+    // console.log('delta: ', delta);
     let winZipBlock = document.getElementById('top_box');
     // Определение расстояния верха блока до низа экрана
-    _this.animationBlockLocation = pageYOffset - _this.animationBlock.offsetTop + _this.clientHeight;
+    // _this.animationBlockLocation = pageYOffset - _this.animationBlock.offsetTop + _this.clientHeight;
+    _this.animationBlockLocation = pageYOffset - 1300;
+
     // animated block
-    // if (event) {
-      if (event.type === 'mousewheel') {
-        _this.delta = _this.wheel(event, _this);
-        console.log('event[' + event.type + ']: ', _this.delta + ', pageYOffset: ' + _this.scrollPosition);
-      } else {
-        winZipBlock.style.top = _this.drawBottomAnimation(_this, winZipBlock.offsetTop, deltaOffset);
-      }
-    // } else {
-    // }
-    //   winZipBlock.style.top = _this.drawBottomAnimation(_this, winZipBlock.offsetTop, deltaOffset);
+    if (event.type === 'mousewheel') {
+      _this.delta = _this.wheel(event, _this);
+      console.log('event[' + event.type + ']: ', _this.delta + ', pageYOffset: ' + _this.scrollPosition);
+    } else {
+      winZipBlock.style.top = _this.drawBottomAnimation(_this, winZipBlock.offsetTop, deltaOffset);
+    }
 
-    //Анимация бегунка
+    //Анимация бегунка // pageYOffset start of animation 420 end animation 1400
+    let scrollingElement = document.getElementById('header');
     let runner = document.getElementById('scroll_runner');
-    let speed = delta * (_this.scrollBox.offsetHeight / _this.clientHeight) * 0.7;
-    _this.scrollBoxBlockLocation = (pageYOffset - _this.scrollBox.offsetTop) - runner.offsetHeight;
-    runner.style.top = _this.drawScrollBox(_this, runner.offsetTop, speed);
-
+    let deltaScroll = delta;
+    runner.style.top = _this.runnerAnimate(scrollingElement, deltaScroll, _this.scrollBox, runner, 400, 1400);
   }
 
   drawCDirection(_this, el) {
@@ -104,21 +99,25 @@ class BlockAnimate {
     return result;
   }
 
-  drawScrollBox(_this, startPosition, deltaOffset) {
-    let nextPosition;
-    if ((_this.scrollBoxBlockLocation > _this.clientHeight * 0.4) && (_this.scrollBoxBlockLocation < (_this.clientHeight + _this.scrollBox.offsetHeight * 0.4))) {
-      nextPosition = startPosition + deltaOffset;
-    } else if (_this.scrollBoxBlockLocation <= _this.clientHeight * 0.4) {
-      nextPosition = 0;
-    } else if (_this.scrollBoxBlockLocation >= (_this.clientHeight + _this.scrollBox.offsetHeight * 0.4)) {
-      nextPosition = _this.scrollBox.offsetHeight - _this.run.offsetHeight;
+  runnerAnimate(scrollingElement, deltaScroll, scrollBox, runner, yStart, yEnd) {
+    let pageYOffset = scrollingElement.scrollTop;
+    let start = parseInt(runner.style.top, 10);
+    let result = start;
+    if (isNaN(start)) {
+      start = 0;
     }
-    if (nextPosition >= _this.scrollBox.offsetHeight - _this.run.offsetHeight) {
-      nextPosition = _this.scrollBox.offsetHeight - _this.run.offsetHeight;
+    let speed = scrollBox.offsetHeight / (yEnd - yStart);
+    let finish = (pageYOffset - yStart) * speed;
+    if (finish > (scrollBox.offsetHeight - runner.offsetHeight)) {
+      finish =  scrollBox.offsetHeight - runner.offsetHeight
     }
-    let newPosition = nextPosition + 'px';
-    return newPosition;
+    if (finish < 0) {
+      finish = 0;
+    }
+    result = finish + 'px';
+    return result;
   }
+
 
   drawBottomAnimation(_this, startPosition, deltaOffset) {
 

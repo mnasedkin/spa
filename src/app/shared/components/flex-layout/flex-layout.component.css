@@ -105,12 +105,16 @@ header, footer, div, ul, li {
   background-size: contain;
 }
 
-.scroll__runner img {
+.scroll__runner {
   position: relative;
+  top: 0;
+}
+.scroll__runner img {
+  /*position: relative;*/
   display: block;
   width: 100%;
   height: auto;
-  top: 0;
+  /*top: 0;*/
 
 }
 
