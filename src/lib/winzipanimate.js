@@ -61,34 +61,51 @@ class BlockAnimate {
 
   //В метод надо передать текущий экземпляр класса для вызова контекста класса в контексте обработчика событий
   menedger(_this) {
-    // console.log('pageYOffset [' + event.type + ']: ', pageYOffset);
-    // console.log('_this: ', _this);
+
+    // Отслеживаю дельту каждого скрола и передаю скрол в this
     let el = document.getElementById('header');
     let pageYOffset = el.scrollTop;
-    let multiply = 2;
     let delta = (pageYOffset - _this.scrollPosition);
     _this.scrollPosition = pageYOffset;
-    let deltaOffset = delta * multiply;
 
-    // console.log('delta: ', delta);
-    let winZipBlock = document.getElementById('top_box');
-    // Определение расстояния верха блока до низа экрана
-    // _this.animationBlockLocation = pageYOffset - _this.animationBlock.offsetTop + _this.clientHeight;
-    _this.animationBlockLocation = pageYOffset - 1300;
+    // Включить для вывода скроллинга и определения начала и конца скролла
+    console.log('pageYOffset: ', pageYOffset);
 
     // animated block
-    if (event.type === 'mousewheel') {
-      _this.delta = _this.wheel(event, _this);
-      console.log('event[' + event.type + ']: ', _this.delta + ', pageYOffset: ' + _this.scrollPosition);
-    } else {
-      winZipBlock.style.top = _this.drawBottomAnimation(_this, winZipBlock.offsetTop, deltaOffset);
-    }
+    let winZipBlock = document.getElementById('top_box');
+    let winAnimate = {
+      scrollingElement: document.getElementById('header'),
+      deltaScroll: delta,
+      scrollBox: _this.animationBlock,
+      runner: document.getElementById('top_box'),
+      startPosition: -190,
+      yStart: 1800,
+      yEnd: 2200,
+      run: _this.drawBottomAnimation(_this, parseInt(winZipBlock.style.top, 10)),
+    };
+    winAnimate.runner.style.top = _this.runAnimate(winAnimate);
 
-    //Анимация бегунка // pageYOffset start of animation 420 end animation 1400
-    let scrollingElement = document.getElementById('header');
-    let runner = document.getElementById('scroll_runner');
-    let deltaScroll = delta;
-    runner.style.top = _this.runnerAnimate(scrollingElement, deltaScroll, _this.scrollBox, runner, 400, 1400);
+    // if (event.type === 'mousewheel') {
+    //   _this.delta = _this.wheel(event, _this);
+    //   console.log('event[' + event.type + ']: ', _this.delta + ', pageYOffset: ' + _this.scrollPosition);
+    //   winZipBlock.style.top = _this.drawBottomAnimation(_this, winZipBlock.offsetTop, deltaOffset);
+    // } else {
+    // }
+
+    //Анимация бегунка
+    let runnerAnimate = {
+      scrollingElement: document.getElementById('header'),
+      deltaScroll: delta,
+      scrollBox: _this.scrollBox,
+      runner: document.getElementById('scroll_runner'),
+      startPosition: 0,
+      yStart: 400,
+      yEnd: 1400,
+      run: function () {
+
+      },
+    };
+    runnerAnimate.runner.style.top = _this.runAnimate(runnerAnimate);
   }
 
   drawCDirection(_this, el) {
@@ -99,7 +116,14 @@ class BlockAnimate {
     return result;
   }
 
-  runnerAnimate(scrollingElement, deltaScroll, scrollBox, runner, yStart, yEnd) {
+  runAnimate(elements) {
+    let scrollingElement = elements.scrollingElement,
+      deltaScroll = elements.deltaScroll,
+      scrollBox = elements.scrollBox,
+      runner = elements.runner,
+      yStart = elements.yStart,
+      yEnd = elements.yEnd,
+      startPosition = elements.startPosition;
     let pageYOffset = scrollingElement.scrollTop;
     let start = parseInt(runner.style.top, 10);
     let result = start;
@@ -109,29 +133,19 @@ class BlockAnimate {
     let speed = scrollBox.offsetHeight / (yEnd - yStart);
     let finish = (pageYOffset - yStart) * speed;
     if (finish > (scrollBox.offsetHeight - runner.offsetHeight)) {
-      finish =  scrollBox.offsetHeight - runner.offsetHeight
+      finish = scrollBox.offsetHeight - runner.offsetHeight
     }
-    if (finish < 0) {
-      finish = 0;
+    if (finish < startPosition) {
+      finish = startPosition;
     }
     result = finish + 'px';
+    // дополнительная функция для выполнения
+    elements.run;
     return result;
   }
 
 
-  drawBottomAnimation(_this, startPosition, deltaOffset) {
-
-    let nextPosition;
-
-    // Анимация начинает работать при попадании блока в область видимости на экране и заканчивает при выходе из области видимости
-    if ((_this.animationBlockLocation > _this.clientHeight / 2) && (_this.animationBlockLocation < _this.clientHeight)) {
-      nextPosition = startPosition + deltaOffset;
-    } else if (_this.animationBlockLocation < _this.clientHeight / 2) {
-      nextPosition = -174;
-    } else if (_this.animationBlockLocation >= _this.clientHeight) {
-      nextPosition = _this.animationBlock.offsetHeight - _this.winZipBlock.offsetHeight;
-    }
-    let newPosition = nextPosition + 'px';
+  drawBottomAnimation(_this, nextPosition) {
 
     // Ставим флаг что блок упал
     if (nextPosition >= _this.animationBlock.offsetHeight - _this.boxFractions[0].height) {
@@ -152,7 +166,6 @@ class BlockAnimate {
     } else {
       _this.bottomBox.setAttribute('fell', 'false');
     }
-    return newPosition;
   }
 
   /*-------------Start #common functions -------------------------------------------------------------------------*/
