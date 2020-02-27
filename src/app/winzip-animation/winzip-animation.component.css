@@ -45,8 +45,6 @@
   bottom: -22px;
 }
 
-/*!*.animation:hover .polygon__triangle
-transition: transition-property transition-duration transition-timing-function transition-delay;*/
 .polygon__img[fell='true'] .polygon__triangle {
   bottom: 0;
   left: 0;

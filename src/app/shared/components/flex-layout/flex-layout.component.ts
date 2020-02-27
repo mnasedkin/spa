@@ -1,9 +1,5 @@
-import {Component, OnInit, HostListener, Inject} from '@angular/core';
-import {Injectable} from '@angular/core';
-// import '../../../../lib/winzipanimate.js'
-import {ScriptStore} from "../../../script.store";
+import {Component, OnInit } from '@angular/core';
  declare var BlockAnimate: any
-
 
 @Component({
   selector: 'app-flex-layout',
@@ -13,9 +9,7 @@ import {ScriptStore} from "../../../script.store";
 
 export class FlexLayoutComponent implements OnInit {
 
-  constructor() {
-    // console.log(window);
-  }
+  constructor() {}
 
   ngOnInit(): void {
     /*-------------Start Document loaded-----------------------------------------------------------------------------*/
