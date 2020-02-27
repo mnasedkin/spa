@@ -23,6 +23,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ExperimentsComponent } from './experiments/experiments.component';
 import { HelpComponent } from './help/help.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LazyLoadImageModule, scrollPreset } from 'ng-lazyload-image';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FlexLayoutComponent,
     ExperimentsComponent,
     HelpComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     FontAwesomeModule,
+    LazyLoadImageModule.forRoot({
+      preset: scrollPreset // <--  use scrollPreset with LazyLoadImage
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

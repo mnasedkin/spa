@@ -79,8 +79,8 @@ class BlockAnimate {
       scrollBox: _this.animationBlock,
       runner: document.getElementById('top_box'),
       startPosition: -190,
-      yStart: 1800,
-      yEnd: 2200,
+      yStart: 4600,
+      yEnd: 5120,
       run: _this.drawBottomAnimation(_this, parseInt(winZipBlock.style.top, 10)),
     };
     winAnimate.runner.style.top = _this.runAnimate(winAnimate);
@@ -100,10 +100,8 @@ class BlockAnimate {
       runner: document.getElementById('scroll_runner'),
       startPosition: 0,
       yStart: 400,
-      yEnd: 1400,
-      run: function () {
-
-      },
+      yEnd: 4600,
+      run: function () {},
     };
     runnerAnimate.runner.style.top = _this.runAnimate(runnerAnimate);
   }
