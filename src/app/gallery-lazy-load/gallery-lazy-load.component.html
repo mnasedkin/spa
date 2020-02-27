@@ -1,17 +1,5 @@
-<div class="gallery gallery--lazy-load" id="gallery">
+<div class="gallery gallery--lazy-load" id="gallery" *ngFor="let i of img">
   <div class="content__image">
-    <img data-src="../../assets/images/lazy_image.jpg" src="../../assets/images/lazy-load.gif" alt="city" class="lazy">
-  </div>
-  <div class="content__image">
-    <img data-src="../../assets/images/lazy_image.jpg" src="../../assets/images/lazy-load.gif" alt="city" class="lazy">
-  </div>
-  <div class="content__image" id="module_2">
-    <img data-src="../../assets/images/lazy_image.jpg" src="../../assets/images/lazy-load.gif" alt="city" class="lazy">
-  </div>
-  <div class="content__image">
-    <img data-src="../../assets/images/lazy_image.jpg" src="../../assets/images/lazy-load.gif" alt="city" class="lazy">
-  </div>
-  <div class="content__image">
-    <img data-src="../../assets/images/lazy_image.jpg" src="../../assets/images/lazy-load.gif" alt="city" class="lazy">
+    <img [defaultImage]="i.defaultImage" [lazyLoad]="i.lazyLoad" alt="city">
   </div>
 </div>

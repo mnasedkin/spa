@@ -1,7 +1,7 @@
 <mat-nav-list>
   <div class="top__menu">
-    <a mat-list-item *ngFor="let item of items.top" routerLink="{{item.url}}"><fa-icon [icon]="item.icon"></fa-icon> {{item.name}}</a>
-<!--    <i data-icon="{{item.icon}}"></i>-->
+    <a mat-list-item *ngFor="let item of items.top" routerLink="{{item.url}}" >{{item.name}}</a>
+<!--    <i ng-icon="{{item.icon}}"></i>-->
   </div>
   <div class="bottom__menu bottom__menu--before-line">
     <a mat-list-item *ngFor="let item of items.bottom" routerLink="{{item.url}}"><fa-icon [icon]="item.icon"></fa-icon> {{item.name}}</a>

@@ -25,6 +25,8 @@ import { HelpComponent } from './help/help.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WinapiComponent } from './winapi/winapi.component';
 import { SettingsComponent } from './settings/settings.component';
+import { LazyLoadImageModule, scrollPreset } from 'ng-lazyload-image';
+
 import { DriverUpdaterComponent } from './driver-updater/driver-updater.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -66,6 +68,9 @@ import { UserMenuComponent } from './user-menu/user-menu.component'
     MatProgressSpinnerModule,
     OverlayModule,
     MatMenuModule
+    LazyLoadImageModule.forRoot({
+      preset: scrollPreset // <--  use scrollPreset with LazyLoadImage
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

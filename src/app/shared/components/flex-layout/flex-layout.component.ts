@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
+ declare var BlockAnimate: any
 
 @Component({
   selector: 'app-flex-layout',
   templateUrl: './flex-layout.component.html',
   styleUrls: ['./flex-layout.component.css']
 })
+
 export class FlexLayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    /*-------------Start Document loaded-----------------------------------------------------------------------------*/
+    let element = document.getElementById('header');
+      let startAnimation = new BlockAnimate();
+    element.addEventListener("scroll", function (event) {
+      return startAnimation.init(startAnimation);
+    });
+    /*-------------End Document loaded -----------------------------------------------------------------------------*/
   }
 
 }

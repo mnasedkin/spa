@@ -7,7 +7,7 @@
 
 .content__image {
   width: 60%;
-  margin: 1rem auto 0;
+  margin: 1em auto 0;
   text-align: center;
   background: white;
 }
@@ -16,6 +16,6 @@
 }
 
 .content__image img {
-  max-width: 100%;
+  width: 100%;
 }
 /*------- End of gallery--------------------------------------------------------------------------------------------*/
