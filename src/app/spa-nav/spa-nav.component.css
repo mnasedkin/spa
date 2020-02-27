@@ -18,6 +18,7 @@
   color: #ffffff;
 }
 .mat-toolbar.mat-primary {
+  justify-content: space-between;
   position: sticky;
   top: 0;
   color: #252629;

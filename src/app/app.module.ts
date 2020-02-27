@@ -28,7 +28,9 @@ import { SettingsComponent } from './settings/settings.component';
 import { DriverUpdaterComponent } from './driver-updater/driver-updater.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { OverlayModule } from '@angular/cdk/overlay'
+import { OverlayModule } from '@angular/cdk/overlay';
+import {MatMenuModule} from '@angular/material/menu';
+import { UserMenuComponent } from './user-menu/user-menu.component'
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { OverlayModule } from '@angular/cdk/overlay'
     WinapiComponent,
     SettingsComponent,
     DriverUpdaterComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    UserMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ import { OverlayModule } from '@angular/cdk/overlay'
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     FontAwesomeModule,
     MatProgressSpinnerModule,
-    OverlayModule
+    OverlayModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
