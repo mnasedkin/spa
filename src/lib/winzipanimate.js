@@ -69,10 +69,11 @@ class BlockAnimate {
     _this.scrollPosition = pageYOffset;
 
     // Включить для вывода скроллинга и определения начала и конца скролла
-    console.log('pageYOffset: ', pageYOffset);
+    // console.log('pageYOffset: ', pageYOffset);
 
     // animated block
     let winZipBlock = document.getElementById('top_box');
+    // console.log('_this.animationBlock.offsetTop: ',_this.animationBlock.getBoundingClientRect());
     let winAnimate = {
       scrollingElement: document.getElementById('header'),
       deltaScroll: delta,

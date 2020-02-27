@@ -51,7 +51,7 @@ import { UserMenuComponent } from './user-menu/user-menu.component'
     SettingsComponent,
     DriverUpdaterComponent,
     BreadcrumbComponent,
-    UserMenuComponent
+    UserMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,12 +67,12 @@ import { UserMenuComponent } from './user-menu/user-menu.component'
     FontAwesomeModule,
     MatProgressSpinnerModule,
     OverlayModule,
-    MatMenuModule
+    MatMenuModule,
     LazyLoadImageModule.forRoot({
       preset: scrollPreset // <--  use scrollPreset with LazyLoadImage
     }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,]
 })
 export class AppModule { }
