@@ -51,6 +51,7 @@
   border-radius: 1.4rem;
   overflow: hidden;
   text-decoration: none;
+  font-size: 2em;
 }
 
 .button__anchor:hover.button__anchor:before {

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import '../../lib/winzipanimate.js';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-winzip-animation',
@@ -10,7 +9,6 @@ export class WinzipAnimationComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

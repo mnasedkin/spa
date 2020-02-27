@@ -28,7 +28,7 @@
 
 .polygon__img {
   position: absolute;
-  bottom: 0;
+  bottom: -21px;
   left: 56%;
   width: 300px;
   height: 300px;

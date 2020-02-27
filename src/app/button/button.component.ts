@@ -13,8 +13,8 @@ export interface AnchorLink {
 })
 export class ButtonComponent implements OnInit {
 
-  // @Input() title: 'testTitle'
-  // @Input() targetId: '#id'
+  @Input() title: any = ''
+  @Input() targetId: any = ''
 
   constructor() {
   }

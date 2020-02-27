@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// import '../lib/paralaxanimate.js';
 
 @Component({
   selector: 'app-root',
