@@ -1,5 +1,8 @@
-.bottom__menu {
-  /*position: relative;*/
+.mat-nav-list .mat-list-item {
+  border-left: 4px solid #2b3d60;
+  display: flex;
+  box-sizing: border-box;
+  color: #ffffff;
 }
 .bottom__menu.bottom__menu--before-line::before {
   content: '';
@@ -7,7 +10,19 @@
   display: block;
   height: 1px;
   width: 80%;
-  margin: 4px 0 4px 9px;
+  margin: 10px 0 10px 18px;
   background: #dbdbdb;
   clear: both;
+}
+.ng-fa-icon {
+  padding: 0 10px 0 0;
+}
+.mat-nav-list .mat-list-item:focus,
+.mat-nav-list .mat-list-item:hover {
+  border-left: 4px solid #82a246;
+  background-color: #22314c;
+}
+.mat-nav-list .mat-list-item:focus,
+.mat-nav-list .mat-list-item:hover .ng-fa-icon {
+  color: #82a246;
 }

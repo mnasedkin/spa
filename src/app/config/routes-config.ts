@@ -11,16 +11,21 @@ import {DriverUpdaterComponent} from "../driver-updater/driver-updater.component
 import {SettingsComponent} from "../settings/settings.component";
 
 export const routes: Routes = [
-  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},//Если путь совпадает с корневым роутом, тогда делаем редирект на home
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'driver-updater', component: DriverUpdaterComponent},
-  {path: 'help', component: HelpComponent},
-  {path: 'settings', component: SettingsComponent},
-  {path: 'winapi', component: WinapiComponent},
   {
-    path: '', component: FlexLayoutComponent, children: [
+    path: '', component: MainLayoutComponent, data: {breadcrumb: 'Home'}, children: [
+      // path: '', component: MainLayoutComponent, children: [
+      {path: '', redirectTo: '/dashboard', pathMatch: 'full'},//Если путь совпадает с корневым роутом, тогда делаем редирект на home
+      {path: 'dashboard', component: DashboardComponent, data: {breadcrumb: 'Dashboard'}},
+      {path: 'driver-updater', component: DriverUpdaterComponent, data: {breadcrumb: 'Driver Updater'}},
+      {path: 'help', component: HelpComponent, data: {breadcrumb: 'Help'}},
+      {path: 'settings', component: SettingsComponent, data: {breadcrumb: 'Settings'}},
+      {path: 'winapi', component: WinapiComponent, data: {breadcrumb: 'Windows API'}},
+    ]
+  },
+  {
+    path: '', component: FlexLayoutComponent, data: {breadcrumb: 'Home'}, children: [
     // path: '', component: MainLayoutComponent, children: [
-      {path: 'experiments', component: ExperimentsComponent},
+      {path: 'experiments', component: ExperimentsComponent, data: {breadcrumb: 'Experiments'}},
     ]
   }
 ];

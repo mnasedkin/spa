@@ -1,7 +1,7 @@
 export class SpaNavItem {
   url: string;
   name: string;
-  icon: string;
+  icon: any;
 }
 export class SpaNavItems {
   top: SpaNavItem[];

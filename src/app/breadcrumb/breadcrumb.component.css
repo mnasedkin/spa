@@ -1,0 +1,31 @@
+.breadcrumbs {
+  margin: 0;
+  padding: 5px 0 5px 20px;
+  position: fixed;
+  width: 100%;
+  list-style-type: none;
+
+  background-color: #eceef2;
+
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.5);
+  box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.5);
+}
+.breadcrumbs__li {
+  display: inline-block;
+  font-size: 14px;
+}
+.breadcrumbs__li:not(:first-child)::before {
+  padding: 0 10px;
+  content:'/';
+}
+.router-link:hover {
+  text-decoration: none;
+}
+.breadcrumbs__li:last-child::before {
+  padding: 0 5px;
+  content:'/';
+  color: #252629;
+}
+.router-link {
+  color: #2f4776;
+}

@@ -10,6 +10,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 })
 export class SpaNavListComponent implements OnInit {
   items: SpaNavItems;
+  
   constructor() { }
 
   ngOnInit() {

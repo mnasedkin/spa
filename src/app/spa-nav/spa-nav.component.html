@@ -3,7 +3,7 @@
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="(isHandset$ | async) === false">
-    <button type="button" mat-button (click)="drawer.toggle()">
+    <button type="button" mat-button (click)="drawer.toggle()" class="sidenav-menu-btn">
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
     <mat-toolbar><img src="" alt=""></mat-toolbar>
@@ -14,8 +14,9 @@
       <button *ngIf="!drawer.opened" type="button" mat-button (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>spa</span>
+      <span>Single Page Application</span>
     </mat-toolbar>
+    <app-breadcrumb></app-breadcrumb>
 
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
