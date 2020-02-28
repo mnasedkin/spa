@@ -1,7 +1,9 @@
 /*------- Start gallery---------------------------------------------------------------------------------------------*/
 .gallery {
+  z-index: 1;
   position: relative;
   padding: 1rem 0.5rem;
+  background-color: #ffffff;
 }
 .gallery--lazy-load {}
 
@@ -19,3 +21,40 @@
   width: 100%;
 }
 /*------- End of gallery--------------------------------------------------------------------------------------------*/
+
+/*------Start Animated from the right headers -------------------------------------------------------------------- */
+
+.c-direction-block_item {
+  position:       absolute;
+  font-size:      10vw;
+  white-space:    nowrap;
+  font-weight:    600;
+  text-transform: uppercase;
+  line-height:    1;
+
+  /*for -three*/
+  top: 55%;
+  left: 0;
+  transform: rotate(9deg);
+
+  /*my*/
+  z-index: -1;
+}
+.c-direction-block_item_inner {
+  position: absolute;
+
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -369.883, 0, 0, 1);
+
+  -o-transition:      all .5s cubic-bezier(0, 0, .18, .55);
+  -moz-transition:    all .5s cubic-bezier(0, 0, .18, .55);
+  -webkit-transition: all .5s cubic-bezier(0, 0, .18, .55);
+  transition:         all .5s cubic-bezier(0, 0, .18, .55);
+
+  font-family: "ProximaNova", Arial, sans-serif;
+  color: #443960;
+}
+
+#block-direction {
+
+}
+/*------- End Animated from the right headers ----------------------------------------------------------------------*/

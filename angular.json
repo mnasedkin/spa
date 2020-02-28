@@ -29,7 +29,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/lib/winzipanimate.js"
+              "src/lib/winzipanimate.js",
+              "src/lib/experiments.js"
             ]
           },
           "configurations": {

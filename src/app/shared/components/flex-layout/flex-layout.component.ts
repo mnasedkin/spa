@@ -1,5 +1,6 @@
 import {Component, OnInit } from '@angular/core';
  declare var BlockAnimate: any
+ declare var ButtonAnimate: any
 
 @Component({
   selector: 'app-flex-layout',
@@ -19,6 +20,16 @@ export class FlexLayoutComponent implements OnInit {
       return startAnimation.init(startAnimation);
     });
     /*-------------End Document loaded -----------------------------------------------------------------------------*/
+    // animateManifest();
+    let animatedElements = document.getElementsByClassName('button__anchor--animate');
+    // console.log(animatedElements);
+    let buttonManifest = new ButtonAnimate();
+    buttonManifest.init(animatedElements);
+
   }
 
 }
+
+
+
+

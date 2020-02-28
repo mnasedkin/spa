@@ -5,7 +5,7 @@
 .winzip-animation__image--top {
   position: absolute;
   top: -190px;
-  width: 170px;
+  width: 163px;
   left: 56%;
   /*padding-left: 70px;*/
 }
@@ -17,6 +17,13 @@
   max-width: 100%;
 }
 
+#top_box {
+
+  -o-transition:      all .5s cubic-bezier(.08,1.05,.68,.47);
+  -moz-transition:    all .5s cubic-bezier(.08,1.05,.68,.47);
+  -webkit-transition: all .5s cubic-bezier(.08,1.05,.68,.47);
+  transition:         all .5s cubic-bezier(.08,1.05,.68,.47);
+}
 /*------End styles #1--------------------------------------------------------------------------------------------- */
 
 /*------Start styles #2--------------------------------------------------------------------------------------------- */
@@ -48,16 +55,16 @@
 .polygon__img[fell='true'] .polygon__triangle {
   bottom: 0;
   left: 0;
-  transform: rotate(360deg) scale(0);
-  -o-transform: rotate(360deg) scale(0);
-  -ms-transform: rotate(360deg) scale(0);
-  -moz-transform: rotate(360deg) scale(0);
-  -webkit-transform: rotate(360deg) scale(0);
+  transform: rotate(120deg) scale(0);
+  -o-transform: rotate(120deg) scale(0);
+  -ms-transform: rotate(120deg) scale(0);
+  -moz-transform: rotate(120deg) scale(0);
+  -webkit-transform: rotate(120deg) scale(0);
 
-  -o-transition: transform .5s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .1s;
-  -moz-transition: transform .5s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .1s;
-  -webkit-transition: transform .5s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .1s;
-  transition: transform .5s cubic-bezier(0, 0, .18, .55) .6s, bottom 1.5s cubic-bezier(0, 0, .18, .55) .3s, left 1.5s cubic-bezier(0, 0, .18, .55) .1s;
+  -o-transition: transform 1s cubic-bezier(0, 0, .18, .55) .1s, bottom 1s cubic-bezier(0, 0, .18, .55) .1s, left 1s cubic-bezier(0, 0, .18, .55) .1s;
+  -moz-transition: transform 1s cubic-bezier(0, 0, .18, .55) .1s, bottom 1s cubic-bezier(0, 0, .18, .55) .1s, left 1s cubic-bezier(0, 0, .18, .55) .1s;
+  -webkit-transition: transform 1s cubic-bezier(0, 0, .18, .55) .1s, bottom 1s cubic-bezier(0, 0, .18, .55) .1s, left 1s cubic-bezier(0, 0, .18, .55) .1s;
+  transition: transform 1s cubic-bezier(0, 0, .18, .55) .1s, bottom 1s cubic-bezier(0, 0, .18, .55) .1s, left 1s cubic-bezier(0, 0, .18, .55) .1s;
 }
 
 .polygon__img[fell='true'] .polygon__triangle.polygon__triangle--1 {
