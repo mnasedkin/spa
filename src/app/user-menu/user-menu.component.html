@@ -1,5 +1,5 @@
 <div class="user-menu">
-  <button mat-button [matMenuTriggerFor]="menu"><fa-icon [icon]="user.icon"></fa-icon> {{user.name}}</button>
+  <button mat-button [matMenuTriggerFor]="menu"><fa-icon [icon]="user.icon"></fa-icon> {{this.profileService.firstName}} {{this.profileService.lastName.charAt(0)}}</button>
   <mat-menu #menu="matMenu" yPosition="above">
     <button mat-menu-item routerLink="{{item.url}}" *ngFor="let item of menuItems">
       <fa-icon [icon]="item.icon"></fa-icon>

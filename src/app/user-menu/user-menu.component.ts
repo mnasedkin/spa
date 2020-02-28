@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faCog, faUser } from '@fortawesome/free-solid-svg-icons';
+import {ProfileService} from "../profile.service";
 
 @Component({
   selector: 'app-user-menu',
@@ -20,4 +21,5 @@ export class UserMenuComponent {
       icon: faCog
     }
   ];
+  constructor(public profileService: ProfileService) {}
 }
