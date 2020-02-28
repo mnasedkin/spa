@@ -1,0 +1,34 @@
+<div class="block__row dashboard-user">
+  <div class="block__column dashboard-user__info block__column--box-shadow">
+    <div class="block__text">
+      <div class="block__row">
+        <div class="block__column dashboard-user--align-self-center">
+          <fa-icon [icon]="faUser" class="dashboard-user__icon icon-user"></fa-icon>
+        </div>
+        <div class="block__column">
+          <div class="block__text">
+            <h3>Good Evening, {{this.profileService.firstName}}!</h3>
+            <p>Welcome to your portal page</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="block__column dashboard-user__status block__column--box-shadow">
+    <div class="block__row">
+      <div class="block__column">
+        <div class="block__text">
+          <h3>Subscription Status:</h3>
+          <p><fa-icon [icon]="faCheckCircle" class="dashboard-user__icon icon-active"></fa-icon> <b>ACTIVE</b></p>
+        </div>
+      </div>
+      <mat-divider [vertical]="true" class="dashboard-user__divider"></mat-divider>
+      <div class="block__column">
+        <div class="block__text">
+          <h3>Started On:</h3>
+          <p><fa-icon [icon]="faCalendarAlt" class="dashboard-user__icon icon-date"></fa-icon> <b>{{today | date:'dd/MM/yy'}}</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

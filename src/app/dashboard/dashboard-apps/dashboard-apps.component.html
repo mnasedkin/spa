@@ -1,0 +1,10 @@
+<div *ngIf="apps.length">
+  <h2>Installed Apps</h2>
+  <div class="block__row dashboard-app">
+    <div *ngFor="let app of apps" class="block__column block__column--box-shadow" routerLink="{{app.url}}" matTooltip="Go to the product page" [matTooltipPosition]="'above'">
+      <h4 class="dashboard-app__status"><fa-icon [icon]="app.statusIcon" class="dashboard-app__icon"></fa-icon> {{app.status}}</h4>
+      <div class="dashboard-app__logo"><fa-icon [icon]="app.icon" class="dashboard-app__icon"></fa-icon></div>
+      <h4 class="dashboard-app__name">{{app.name}}</h4>
+    </div>
+  </div>
+</div>

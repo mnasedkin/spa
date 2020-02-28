@@ -38,6 +38,11 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileEditorComponent } from './shared/forms/profile-editor/profile-editor.component';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { DashboardUserComponent } from './dashboard/dashboard-user/dashboard-user.component';
+import { DashboardAppsComponent } from './dashboard/dashboard-apps/dashboard-apps.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
+import { DashboardUpdatesComponent } from './dashboard/dashboard-updates/dashboard-updates.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -58,6 +63,9 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     BreadcrumbComponent,
     UserMenuComponent,
     ProfileEditorComponent,
+    DashboardUserComponent,
+    DashboardAppsComponent,
+    DashboardUpdatesComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,6 +89,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatFormFieldModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatTooltipModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent,]
