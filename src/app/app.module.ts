@@ -26,7 +26,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { WinapiComponent } from './winapi/winapi.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LazyLoadImageModule, scrollPreset } from 'ng-lazyload-image';
-
 import { DriverUpdaterComponent } from './driver-updater/driver-updater.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -34,6 +33,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import {MatMenuModule} from '@angular/material/menu';
 import { UserMenuComponent } from './user-menu/user-menu.component'
 import {MatCardModule} from "@angular/material/card";
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to'
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileEditorComponent } from './shared/forms/profile-editor/profile-editor.component';
@@ -86,6 +86,7 @@ import {MatTableModule} from "@angular/material/table";
       preset: scrollPreset // <--  use scrollPreset with LazyLoadImage
     }),
     MatCardModule,
+    ScrollToModule.forRoot(),
     MatFormFieldModule,
     ReactiveFormsModule,
     MatSnackBarModule,

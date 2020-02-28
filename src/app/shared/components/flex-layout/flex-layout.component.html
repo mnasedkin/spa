@@ -2,10 +2,9 @@
 
   <div class="block__row header">
     <router-outlet></router-outlet>
-    <app-button [targetId]="'#anchor2'" [title]="'Survay the animation'"></app-button>
-<!--    <div class="button__anchor button__anchor&#45;&#45;animate" >-->
-<!--      <a href="experiments/#anchor&#45;&#45;2" class="button_link">Go there</a>-->
-<!--    </div>-->
+    <div class="button__anchor button__anchor--animate">
+        <a  [ngx-scroll-to]="'#anchor2'" [ngx-scroll-to-duration]=2000 class="button_link">Survay the animation</a>
+    </div>
   </div>
 
   <div class="block__row gallery">
@@ -22,17 +21,16 @@
 
   </div>
 
-  <div class="block__row winzip-animation">
+  <div class="block__row winzip-animation"  id="anchor2">
     <app-winzip-animation></app-winzip-animation>
-    <app-button [targetId]="'#anchor1'" [title]="'Go to Start'"></app-button>
 
-<!--    <div class="button__anchor button__anchor&#45;&#45;animate" >-->
-<!--      <a href="#anchor&#45;&#45;1" class="button_link">Go there</a>-->
-<!--    </div>-->
+    <div class="button__anchor button__anchor--animate">
+      <a [ngx-scroll-to]="'#anchor1'" [ngx-scroll-to-duration]=1000 class="button_link">Go to Start</a>
+    </div>
 
   </div>
 
-  <footer class="footer block__row" id="anchor2">
+  <footer class="footer block__row">
     <div class="block__column">
     </div>
     <div class="block__column">

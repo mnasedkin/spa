@@ -15,18 +15,18 @@ class BlockAnimate {
     this.run = document.getElementById('scroll_runner');
     // Scrolling position (top of the screen)
     this.scrollPosition = this.element.scrollTop;
-    /*Высота всего сайта скрол + скрин*/
+    /* Height of the whole site scroll + screen */
     this.scrollHeight = Math.max(
       this.element.scrollHeight, this.element.scrollHeight,
       this.element.offsetHeight, this.element.offsetHeight,
       this.element.clientHeight, this.element.clientHeight
     );
-    /*Высота скрина*/
+    /*Height of screen*/
     this.clientHeight = this.element.clientHeight;
     this.blokPos = this.animationBlock.getBoundingClientRect();
-    /*Определение значения top при котором начинается анимация*/
+    /*Determining the top value at which the animation begins*/
     this.yStartOfAinmaton = this.clientHeight * 0.5;
-    /*Определение значения top при котором заканчивается анимация*/
+    /*Determining the top value at which the animation ends*/
     this.yEndOfAinmaton = this.clientHeight - this.blokPos.height;
     this.speedOfAnimation = Math.abs(
       (this.boxFractions[0].offsetTop - this.winZipBlock.offsetTop) / (this.yEndOfAinmaton - this.yStartOfAinmaton)
@@ -35,7 +35,6 @@ class BlockAnimate {
     this.scrollBoxBlockLocation = this.scrollBox.offsetTop + this.clientHeight;
 
   }
-
 
   init(_this) {
     /*Если метод вызывается в без обработчика событий, вызываем встроенный обработчик.
@@ -53,96 +52,81 @@ class BlockAnimate {
       _this.menedger(_this);
       _this.addScrollHandler(_this, _this.menedger);
     }
-
-    // Отдельно слушаю колесо мышки
-    // _this.addWheelHandler(_this, _this.menedger);
-
   }
 
   //В метод надо передать текущий экземпляр класса для вызова контекста класса в контексте обработчика событий
   menedger(_this) {
 
-    // Отслеживаю дельту каждого скрола и передаю скрол в this
-    let el = document.getElementById('header');
-    let pageYOffset = el.scrollTop;
-    let delta = (pageYOffset - _this.scrollPosition);
-    _this.scrollPosition = pageYOffset;
-
-    // Включить для вывода скроллинга и определения начала и конца скролла
-    // console.log('pageYOffset: ', pageYOffset);
+    // анимация вертикального текста
+    let text = document.getElementById('direction');
+    let gallery = document.getElementById('gallery');
+    let galleryTop = gallery.getBoundingClientRect();
+    let move = galleryTop.y * 0.8 + 800;
+    let val ='matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ' + move*2 + ', ' + move/2 + ', 0, 1)';
+    text.style.transform = val;
 
     // animated block
-    let winZipBlock = document.getElementById('top_box');
-    // console.log('_this.animationBlock.offsetTop: ',_this.animationBlock.getBoundingClientRect());
     let winAnimate = {
       scrollingElement: document.getElementById('header'),
-      deltaScroll: delta,
       scrollBox: _this.animationBlock,
       runner: document.getElementById('top_box'),
+      clientHeight: _this.clientHeight,
       startPosition: -190,
-      yStart: 4600,
-      yEnd: 5120,
-      run: _this.drawBottomAnimation(_this, parseInt(winZipBlock.style.top, 10)),
+      screenStart: 0.5,
+      screenFinish: 0.2,
+      run: _this.drawBottomAnimation(_this, parseInt(document.getElementById('top_box').style.top, 10)),
     };
-    winAnimate.runner.style.top = _this.runAnimate(winAnimate);
-
-    // if (event.type === 'mousewheel') {
-    //   _this.delta = _this.wheel(event, _this);
-    //   console.log('event[' + event.type + ']: ', _this.delta + ', pageYOffset: ' + _this.scrollPosition);
-    //   winZipBlock.style.top = _this.drawBottomAnimation(_this, winZipBlock.offsetTop, deltaOffset);
-    // } else {
-    // }
+    winAnimate.runner.style.top = _this.runScrollAnimation(winAnimate);
 
     //Анимация бегунка
-    let runnerAnimate = {
+    let runAnimate = {
       scrollingElement: document.getElementById('header'),
-      deltaScroll: delta,
       scrollBox: _this.scrollBox,
       runner: document.getElementById('scroll_runner'),
+      clientHeight: _this.clientHeight,
       startPosition: 0,
-      yStart: 400,
-      yEnd: 4600,
-      run: function () {},
+      screenStart: 0.3,
+      screenFinish: 0.3,
+      run: function () {
+      },
     };
-    runnerAnimate.runner.style.top = _this.runAnimate(runnerAnimate);
+    runAnimate.runner.style.top = _this.runScrollAnimation(runAnimate);
+    // runAnimate.runner.style.transform = 'translateY: ('10 + 10 + ');';
   }
 
-  drawCDirection(_this, el) {
+  runScrollAnimation(param) {
+
     let result;
-    console.log(el.style.transform);
-    let value = pageYOffset - 500;
-    result = 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ' + value + ', 0, 1)';
-    return result;
-  }
 
-  runAnimate(elements) {
-    let scrollingElement = elements.scrollingElement,
-      deltaScroll = elements.deltaScroll,
-      scrollBox = elements.scrollBox,
-      runner = elements.runner,
-      yStart = elements.yStart,
-      yEnd = elements.yEnd,
-      startPosition = elements.startPosition;
-    let pageYOffset = scrollingElement.scrollTop;
-    let start = parseInt(runner.style.top, 10);
-    let result = start;
-    if (isNaN(start)) {
-      start = 0;
-    }
-    let speed = scrollBox.offsetHeight / (yEnd - yStart);
-    let finish = (pageYOffset - yStart) * speed;
-    if (finish > (scrollBox.offsetHeight - runner.offsetHeight)) {
-      finish = scrollBox.offsetHeight - runner.offsetHeight
-    }
-    if (finish < startPosition) {
-      finish = startPosition;
-    }
-    result = finish + 'px';
-    // дополнительная функция для выполнения
-    elements.run;
-    return result;
-  }
+    let scrollingElement = param.scrollingElement;
+    let scrollBox = param.scrollBox;
+    let runner = param.runner;
+    let clientHeight = param.clientHeight;
+    let startPosition = param.startPosition;
+    let screenStart = param.screenStart;
+    let screenFinish = param.screenFinish;
+    let run = param.run;
 
+    let scrollBoxTop = -scrollBox.getBoundingClientRect().y;
+    let scrollBoxHeight = scrollBox.getBoundingClientRect().height;
+    let runnerPosition = parseInt(runner.style.top, 10);
+    if (isNaN(runnerPosition)) {
+      runnerPosition = 0;
+    }
+    let runnerHeight = runner.offsetHeight;
+    let delta = (clientHeight * (1 - screenStart - screenFinish))*(runnerPosition/(scrollBoxHeight-runnerHeight));
+
+    runnerPosition = scrollBoxTop + clientHeight * screenStart;
+    result = runnerPosition + delta;
+
+    if (result < startPosition) {
+      result = startPosition;
+    }
+    if (result > scrollBoxHeight - runnerHeight) {
+      result = scrollBoxHeight - runnerHeight;
+    }
+    return result + 'px';
+  }
 
   drawBottomAnimation(_this, nextPosition) {
 

@@ -1,5 +1,15 @@
-<div class="gallery gallery--lazy-load" id="gallery" *ngFor="let i of img">
-  <div class="content__image">
-    <img [defaultImage]="i.defaultImage" [lazyLoad]="i.lazyLoad" alt="city">
+<div class="gallery gallery--lazy-load" id="gallery">
+
+  <div *ngFor="let i of img">
+    <div class="content__image">
+      <img [defaultImage]="i.defaultImage" [lazyLoad]="i.lazyLoad" alt="city">
+    </div>
   </div>
+
+  <div class="c-direction-block_item" di="block-direction">
+        <span class="c-direction-block_item_inner" id="direction">
+            If successed done...
+        </span>
+  </div>
+
 </div>
