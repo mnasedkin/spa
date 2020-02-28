@@ -31,6 +31,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { OverlayModule } from '@angular/cdk/overlay';
 import {MatMenuModule} from '@angular/material/menu';
 import { UserMenuComponent } from './user-menu/user-menu.component'
+import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileEditorComponent } from './shared/forms/profile-editor/profile-editor.component';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -49,7 +54,8 @@ import { UserMenuComponent } from './user-menu/user-menu.component'
     SettingsComponent,
     DriverUpdaterComponent,
     BreadcrumbComponent,
-    UserMenuComponent
+    UserMenuComponent,
+    ProfileEditorComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,11 +67,15 @@ import { UserMenuComponent } from './user-menu/user-menu.component'
     MatIconModule,
     MatListModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     FontAwesomeModule,
     MatProgressSpinnerModule,
     OverlayModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
