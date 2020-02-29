@@ -43,6 +43,7 @@ import { DashboardAppsComponent } from './dashboard/dashboard-apps/dashboard-app
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { DashboardUpdatesComponent } from './dashboard/dashboard-updates/dashboard-updates.component';
 import {MatTableModule} from "@angular/material/table";
+import { LinksComponent } from './shared/components/links/links.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import {MatTableModule} from "@angular/material/table";
     DashboardUserComponent,
     DashboardAppsComponent,
     DashboardUpdatesComponent,
+    LinksComponent,
   ],
   imports: [
     BrowserModule,

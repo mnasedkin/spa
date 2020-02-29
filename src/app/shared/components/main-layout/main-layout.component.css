@@ -23,6 +23,8 @@ header, footer, div, ul, li {
     justify-content: center;
     -webkit-justify-content: center;
 
+    max-width: 980px;
+
     align-items: center;
     -webkit-align-content: center;
     -webkit-align-items: center;
@@ -70,6 +72,49 @@ header, footer, div, ul, li {
   border: 1px solid #EFEFEF;
   padding: 1rem;
 }
-
+.block__column--box-shadow {
+  -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.05);
+  -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.05);
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.05);
+}
+.block__column--box-shadow:hover {
+  -webkit-box-shadow: 0 0 7px 0 rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 0 7px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.15);
+}
 
 /*----- End Styles for this layout -------------------------------------------------*/
+/*----- Start Styles for Links Component -------------------------------------------------*/
+.links h2 fa-icon {
+color: #44639f;
+}
+.links .block__row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow: visible;
+}
+.links .block__row .block__column:not(:last-child) {
+  margin-right: 1rem;
+}
+.links .block__column {
+  margin-bottom: 1rem;
+  padding: .5rem 1rem;
+  display: flex;
+  justify-content: flex-start;
+  justify-items: center;
+  max-width: 280px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+.links .links-icon {
+  font-size: 3rem;
+  color: #44639f;
+}
+.links .links-name {
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2b3d60;
+  align-self: center;
+}
+/*----- End Styles for Links Component -------------------------------------------------*/

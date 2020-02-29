@@ -116,6 +116,7 @@
 
 /*----- Start Styles Dashboard updates -----------------------------------------------*/
 .dashboard-updates {
+  margin-bottom: 2rem;
   max-width: 980px;
 }
 .dashboard-updates .block__column--box-shadow:hover {
