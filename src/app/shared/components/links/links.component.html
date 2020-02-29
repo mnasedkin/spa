@@ -1,0 +1,9 @@
+<div class="links">
+  <h2 *ngIf="showHeader == true"><fa-icon [icon]="faQuestionCircle"></fa-icon> Helpful Tips</h2>
+  <div class="block__row">
+    <div class="block__column block__column--box-shadow" routerLink="{{link.url}}" *ngFor="let link of links">
+      <div class="links-icon"><fa-icon [icon]="link.icon"></fa-icon></div>
+      <div class="links-name">{{link.name}}</div>
+    </div>
+  </div>
+</div>
