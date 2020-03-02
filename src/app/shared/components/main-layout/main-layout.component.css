@@ -92,9 +92,15 @@ color: #44639f;
   flex-wrap: wrap;
   justify-content: flex-start;
   overflow: visible;
+  margin-top: 1rem;
 }
 .links .block__row .block__column:not(:last-child) {
   margin-right: 1rem;
+}
+@media screen and (max-width: 900px) {
+  .links .block__row .block__column:not(:last-child) {
+    margin-right: 0;
+  }
 }
 .links .block__column {
   margin-bottom: 1rem;

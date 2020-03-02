@@ -112,10 +112,10 @@ header, footer, div, ul, li {
   position: relative;
   top: 0;
 
-  -o-transition:      all 1s cubic-bezier(.08,1.05,.68,.47);
-  -moz-transition:    all 1s cubic-bezier(.08,1.05,.68,.47);
-  -webkit-transition: all 1s cubic-bezier(.08,1.05,.68,.47);
-  transition:         all 1s cubic-bezier(.08,1.05,.68,.47);
+  -o-transition:       all 1s cubic-bezier(.3,.76,.88,.76);
+  -moz-transition:     all 1s cubic-bezier(.3,.76,.88,.76);
+  -webkit-transition:  all 1s cubic-bezier(.3,.76,.88,.76);
+  transition:          all 1s cubic-bezier(.3,.76,.88,.76);
 
 }
 .scroll__runner img {

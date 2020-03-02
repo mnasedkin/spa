@@ -12,7 +12,7 @@ export class BreadcrumbComponent implements OnInit {
   breadcrumbs: IBreadCrumb[];
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.breadcrumbs = this.setBreadCrumb(this.activatedRoute.root);
-    console.log(this.breadcrumbs);
+    // console.log(this.breadcrumbs);
   }
 
   ngOnInit(): void {

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SwUpdate} from "@angular/service-worker";
 import { PreloaderService } from './preloader.service'
-// import '../lib/paralaxanimate.js';
 
 @Component({
   selector: 'app-root',

@@ -3,7 +3,7 @@
   z-index: 1;
   position: relative;
   padding: 1rem 0.5rem;
-  background-color: #ffffff;
+  background-color: #f2f2f2;
 }
 .gallery--lazy-load {}
 
@@ -33,7 +33,7 @@
   line-height:    1;
 
   /*for -three*/
-  top: 55%;
+  top: 20%;
   left: 0;
   transform: rotate(9deg);
 

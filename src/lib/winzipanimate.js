@@ -37,31 +37,31 @@ class BlockAnimate {
   }
 
   init(_this) {
-    /*Если метод вызывается в без обработчика событий, вызываем встроенный обработчик.
-     Если обработчик событий не scroll или onscroll, вызываем встроенный обработчик,
-     иначе, если метод вызван уже в обработчике scroll, возвращаем только функцию callback*/
+    /*If the method is called in without an event handler, we call the built-in handler.
+      If the event handler is not scroll or onscroll, we call the built-in handler,
+      otherwise, if the method is already called in the scroll handler, we return only the function callback*/
     if (typeof event === 'undefined') {
-      console.log('first block (call handler no event)');
+      // console.log('first block (call handler no event)');
       _this.menedger(_this);
       _this.addScrollHandler(_this, _this.menedger);
     } else if (event.type === 'scroll' || event.type === 'onscroll') {
-      console.log('second block (call only method)');
+      // console.log('second block (call only method)');
       _this.menedger(_this);
     } else {
-      console.log('third block (call scroll handler in another events )');
+      // console.log('third block (call scroll handler in another events )');
       _this.menedger(_this);
       _this.addScrollHandler(_this, _this.menedger);
     }
   }
 
-  //В метод надо передать текущий экземпляр класса для вызова контекста класса в контексте обработчика событий
+  //call the context of the class in the context of the event handler
   menedger(_this) {
 
-    // анимация вертикального текста
+    // vertical text animation
     let text = document.getElementById('direction');
     let gallery = document.getElementById('gallery');
     let galleryTop = gallery.getBoundingClientRect();
-    let move = galleryTop.y * 0.8 + 800;
+    let move = galleryTop.y * 0.8 + 200;
     let val ='matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ' + move*2 + ', ' + move/2 + ', 0, 1)';
     text.style.transform = val;
 
@@ -78,7 +78,7 @@ class BlockAnimate {
     };
     winAnimate.runner.style.top = _this.runScrollAnimation(winAnimate);
 
-    //Анимация бегунка
+    //runner animation
     let runAnimate = {
       scrollingElement: document.getElementById('header'),
       scrollBox: _this.scrollBox,
@@ -117,7 +117,7 @@ class BlockAnimate {
     let delta = (clientHeight * (1 - screenStart - screenFinish))*(runnerPosition/(scrollBoxHeight-runnerHeight));
 
     runnerPosition = scrollBoxTop + clientHeight * screenStart;
-    result = runnerPosition + delta;
+    result = runnerPosition + delta*1.2;
 
     if (result < startPosition) {
       result = startPosition;
@@ -130,7 +130,7 @@ class BlockAnimate {
 
   drawBottomAnimation(_this, nextPosition) {
 
-    // Ставим флаг что блок упал
+    // We set the flag that the block fell
     if (nextPosition >= _this.animationBlock.offsetHeight - _this.boxFractions[0].height) {
       _this.winZipBlock.setAttribute('fell', 'true');
       _this.top_img.src = '../assets/images/reggie_thumbs_up.png';
@@ -140,7 +140,7 @@ class BlockAnimate {
     }
 
     //animation for bottom box bang
-    // Слушаем флаг упавшего блока и сетим его в нижний ящик, анимацию взрыва выполняют css
+    //We listen to the flag of the fallen block and set it in the lower box, the animation of the explosion is performed by css
     let isStartBang = _this.winZipBlock.getAttribute('fell');
     if (isStartBang === 'true') {
       // let timeOut = setTimeout(function () {
@@ -203,7 +203,7 @@ class BlockAnimate {
     } else alert("Add handler is not supported");
   }
 
-  // Метот возвращает -1 при каждой прокрутке вниз и 1 - вверх.
+  // The method returns -1 each time it scrolls down and 1 - up.
   wheel(event) {
     var delta; // Scroll direction
     event = event || window.event;
