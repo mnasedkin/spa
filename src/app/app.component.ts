@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {SwUpdate} from "@angular/service-worker";
-import { PreloaderService } from './preloader.service'
-// import '../lib/paralaxanimate.js';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +9,7 @@ import { PreloaderService } from './preloader.service'
 export class AppComponent implements OnInit {
   title = 'spa';
   //Inject service worker
-  constructor(private swUpdate: SwUpdate, private preloader : PreloaderService) {
-    this.preloader.spin$.next(true);
-  }
+  constructor(private swUpdate: SwUpdate) {}
   //Subscribe for a new available version
   ngOnInit(): void {
     if (this.swUpdate.isEnabled) {
@@ -22,12 +18,6 @@ export class AppComponent implements OnInit {
           window.location.reload();
         }
       });
-    } else {
-      console.log('not Enabled!');
     }
-
-    setTimeout(
-      () => this.preloader.spin$.next(false), 1000
-    )
   }
 }
