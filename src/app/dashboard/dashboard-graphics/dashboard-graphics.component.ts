@@ -117,7 +117,7 @@ export class DashboardGraphicsComponent implements OnInit {
         fontFamily: 'Nunito Sans, Helvetica, Arial, sans-serif'
       },
       series: [83.33],
-      labels: ['5 Product installed'],
+      labels: ['5 Products installed'],
       title: {
         text: "Installed Products in Your Subscription:",
         align: "center",
