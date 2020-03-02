@@ -40,7 +40,7 @@ body { margin: 0; font-family: 'Nunito Sans', "Helvetica Neue", sans-serif; }
 
 @keyframes dash {
   0% {
-    stroke-dasharray: 1, 200;
+    stroke-dasharray: 45, 200;
     stroke-dashoffset: 0;
   }
   50% {
