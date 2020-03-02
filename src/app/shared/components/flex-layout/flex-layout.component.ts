@@ -1,6 +1,6 @@
 import {Component, OnInit } from '@angular/core';
- declare var BlockAnimate: any
- declare var ButtonAnimate: any
+declare var BlockAnimate: any;
+declare var ButtonAnimate: any;
 
 @Component({
   selector: 'app-flex-layout',

@@ -10,7 +10,6 @@ header, footer, div, ul, li {
   font-size: 10px;
   /*height: 600px;*/
   /*overflow-y: scroll;*/
-
 }
 @supports (display: flex) or (display: -webkit-box) {
   .block__row {
@@ -69,6 +68,8 @@ header, footer, div, ul, li {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: contain;
+
+  margin: 0;
 }
 @media (max-width: 1400px) {
   .header {
