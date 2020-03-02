@@ -1,7 +1,6 @@
 class ButtonAnimate {
   init(animatedElements) {
     for (let i = 0; i < animatedElements.length; i++) {
-      console.log(animatedElements[i]);
       this.animate(function (progress) {
         let value = (1 * progress);
         animatedElements[i].style.opacity = value;

@@ -47,6 +47,7 @@ import { LinksComponent } from './shared/components/links/links.component';
 import { DashboardGraphicsComponent } from './dashboard/dashboard-graphics/dashboard-graphics.component';
 import {NgApexchartsModule} from "ng-apexcharts";
 
+
 @NgModule({
   declarations: [
     AppComponent,

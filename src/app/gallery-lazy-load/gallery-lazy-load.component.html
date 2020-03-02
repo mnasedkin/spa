@@ -1,9 +1,8 @@
-<div class="gallery gallery--lazy-load" id="gallery">
+<div class="gallery gallery--lazy-load" id="gallery" (onLoad)="getLazyh">
 
-  <div *ngFor="let i of img">
-    <div class="content__image">
-      <img [defaultImage]="i.defaultImage" [lazyLoad]="i.lazyLoad" alt="city">
-    </div>
+
+  <div class="content__image" *ngFor="let i of img">
+    <img [attr.data-src]="i.lazyLoad" src="{{i.defaultImage}}" alt="city" class="lazy">
   </div>
 
   <div class="c-direction-block_item" di="block-direction">
