@@ -1,0 +1,23 @@
+<div class="dashboard-chart">
+  <div class="block__column block__column--box-shadow">
+    <div class="block__row">
+      <h2>Helpful Charts:</h2>
+    </div>
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
+      [dataLabels]="chartOptions.dataLabels"
+      [grid]="chartOptions.grid"
+      [stroke]="chartOptions.stroke"
+      [title]="chartOptions.title">
+    </apx-chart>
+    <apx-chart
+      [title]="chartProgressOptions.title"
+      [labels]="chartProgressOptions.labels"
+      [series]="chartProgressOptions.series"
+      [chart]="chartProgressOptions.chart" >
+    </apx-chart>
+  </div>
+</div>

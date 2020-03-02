@@ -159,3 +159,9 @@ mat-cell:last-of-type {
 .dashboard-updates__phrase {}
 .dashboard-updates__version {}
 /*----- End Styles Dashboard updates -----------------------------------------------*/
+
+/*----- Start Styles Dashboard chart -----------------------------------------------*/
+.dashboard-chart {
+  max-width: 980px;
+}
+/*----- End Styles Dashboard chart -----------------------------------------------*/

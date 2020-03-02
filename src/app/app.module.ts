@@ -44,6 +44,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import { DashboardUpdatesComponent } from './dashboard/dashboard-updates/dashboard-updates.component';
 import {MatTableModule} from "@angular/material/table";
 import { LinksComponent } from './shared/components/links/links.component';
+import { DashboardGraphicsComponent } from './dashboard/dashboard-graphics/dashboard-graphics.component';
+import {NgApexchartsModule} from "ng-apexcharts";
 
 @NgModule({
   declarations: [
@@ -68,6 +70,7 @@ import { LinksComponent } from './shared/components/links/links.component';
     DashboardAppsComponent,
     DashboardUpdatesComponent,
     LinksComponent,
+    DashboardGraphicsComponent,
   ],
   imports: [
     BrowserModule,
@@ -94,6 +97,7 @@ import { LinksComponent } from './shared/components/links/links.component';
     MatSnackBarModule,
     MatTooltipModule,
     MatTableModule,
+    NgApexchartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent,]

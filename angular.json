@@ -30,7 +30,8 @@
             ],
             "scripts": [
               "src/lib/winzipanimate.js",
-              "src/lib/experiments.js"
+              "src/lib/experiments.js",
+              "node_modules/apexcharts/dist/apexcharts.min.js"
             ]
           },
           "configurations": {
