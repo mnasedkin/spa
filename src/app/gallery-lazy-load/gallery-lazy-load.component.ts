@@ -49,19 +49,20 @@ export class GalleryLazyLoadComponent implements OnInit {
       }
     }
 
-
-    window.addEventListener("DOMContentLoaded", function () {
-      getLazyLoadImg(lazyloadImages);
-    });
-    scrollElement.addEventListener("scroll", function () {
-      getLazyLoadImg(lazyloadImages);
-    });
-    scrollElement.addEventListener("resize", function () {
-      getLazyLoadImg(lazyloadImages);
-    });
-    scrollElement.addEventListener("orientationChange", function () {
-      getLazyLoadImg(lazyloadImages);
-    });
+    function listener(){getLazyLoadImg(lazyloadImages);}
+    let flex = document.getElementById('anchor1');
+    if (flex === null) {
+      window.removeEventListener("DOMContentLoaded", listener, false);
+      scrollElement.removeEventListener("scroll", listener, false);
+      scrollElement.removeEventListener("resize", listener, false);
+      scrollElement.removeEventListener("orientationChange", listener, false);
+      return;
+    } else {
+      window.addEventListener("DOMContentLoaded", listener);
+      scrollElement.addEventListener("scroll", listener);
+      scrollElement.addEventListener("resize", listener);
+      scrollElement.addEventListener("orientationChange", listener);
+    }
 
     /*-------------End LazyLoad -----------------------------------------------------------------------------*/
 
@@ -79,6 +80,7 @@ export class GalleryLazyLoadComponent implements OnInit {
         }
       }
     }
+
     this.getLazyh = getLazyLoadImg(lazyloadImages);
   }
 

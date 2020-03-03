@@ -33,7 +33,7 @@ header, footer, div, ul, li {
   .block__column {
     position: relative;
     /*overflow: hidden;*/
-    background-color: white;
+    /*background-color: white;*/
   }
 }
 .block__text {
@@ -84,7 +84,11 @@ header, footer, div, ul, li {
 }
 
 .gallery {
-
+  background-image: url("../../../../assets/images/download.jpg");
+  background-position: top 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .winzip-animation {

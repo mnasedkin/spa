@@ -58,12 +58,21 @@ class BlockAnimate {
   menedger(_this) {
 
     // vertical text animation
-    let text = document.getElementById('direction');
-    let gallery = document.getElementById('gallery');
-    let galleryTop = gallery.getBoundingClientRect();
-    let move = galleryTop.y * 0.8 + 200;
-    let val ='matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ' + move*2 + ', ' + move/2 + ', 0, 1)';
-    text.style.transform = val;
+    animateRowText('direction1', -1, 0.5);
+    animateRowText('direction2', 3, 0.7);
+    animateRowText('direction3', -2.5, 0.5);
+    animateRowText('direction4', 1.5, 0.5);
+
+    function animateRowText(id, kx, ky){
+      let text = document.getElementById(id);
+      let gallery = document.getElementById('gallery');
+      let galleryTop = gallery.getBoundingClientRect();
+      let move = galleryTop.y * 0.8 + 200;
+      let val ='matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ' + move*kx + ', ' + move*ky + ', 0, 1)';
+      text.style.transform = val;
+    }
+
+    // animateRowText('direction')
 
     // animated block
     let winAnimate = {
@@ -116,6 +125,11 @@ class BlockAnimate {
     let runnerHeight = runner.offsetHeight;
     let delta = (clientHeight * (1 - screenStart - screenFinish))*(runnerPosition/(scrollBoxHeight-runnerHeight));
 
+    // if (true) {
+    // console.log('delta: ', (delta));
+    // console.log('scrollBox: ', ());
+    // }
+
     runnerPosition = scrollBoxTop + clientHeight * screenStart;
     result = runnerPosition + delta*1.2;
 
@@ -124,6 +138,11 @@ class BlockAnimate {
     }
     if (result > scrollBoxHeight - runnerHeight) {
       result = scrollBoxHeight - runnerHeight;
+    }
+    let flex = document.getElementById('anchor1');
+    if (flex === null) {
+      result = 0;
+      scrollBox.removeEventListener("scroll", this.runScrollAnimation);
     }
     return result + 'px';
   }
