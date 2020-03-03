@@ -1,9 +1,12 @@
 <mat-nav-list>
   <div class="top__menu">
-    <a mat-list-item *ngFor="let item of items.top" routerLink="{{item.url}}"><fa-icon [icon]="item.icon"></fa-icon> {{item.name}}</a>
+    <div *ngFor="let item of items.top">
+      <a *ngIf="item.name == 'Dashboard' && this.updateService.updates.length > 0" mat-list-item  routerLink="{{item.url}}" routerLinkActive="mat-list-item--item-active" matBadge="{{this.updateService.updates.length}}"><fa-icon [icon]="item.icon"></fa-icon> {{item.name}}</a>
+      <a *ngIf="item.name != 'Dashboard' || this.updateService.updates.length == 0" mat-list-item  routerLink="{{item.url}}" routerLinkActive="mat-list-item--item-active"><fa-icon [icon]="item.icon"></fa-icon> {{item.name}}</a>
+    </div>
 <!--    <i ng-icon="{{item.icon}}"></i>-->
   </div>
   <div class="bottom__menu bottom__menu--before-line">
-    <a mat-list-item *ngFor="let item of items.bottom" routerLink="{{item.url}}"><fa-icon [icon]="item.icon"></fa-icon> {{item.name}}</a>
+    <a mat-list-item *ngFor="let item of items.bottom" routerLink="{{item.url}}" routerLinkActive="mat-list-item--item-active"><fa-icon [icon]="item.icon"></fa-icon> {{item.name}}</a>
   </div>
 </mat-nav-list>
