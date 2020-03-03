@@ -172,10 +172,10 @@ class BlockAnimate {
     // We set the flag that the block fell
     if (nextPosition >= _this.animationBlock.offsetHeight - _this.boxFractions[0].height) {
       _this.winZipBlock.setAttribute('fell', 'true');
-      _this.top_img.src = '/spa/dist/spa/assets/images/reggie_thumbs_up.png';
+      _this.top_img.src = '../assets/images/reggie_thumbs_up.png';
     } else {
       _this.winZipBlock.setAttribute('fell', 'false');
-      _this.top_img.src = '/spa/dist/spa/assets/images/wz_top.png'
+      _this.top_img.src = '../assets/images/wz_top.png'
     }
 
     //animation for bottom box bang

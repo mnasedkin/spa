@@ -16,13 +16,13 @@ export class GalleryLazyLoadComponent implements OnInit {
 
   public getLazyh;
   public img = [
-    {defaultImage: '/spa/dist/spa/assets/images/lazy-load.gif', lazyLoad: '/spa/dist/spa/assets/images/lazy_image.jpg',},
-    {defaultImage: '/spa/dist/spa/assets/images/lazy-load.gif', lazyLoad: '/spa/dist/spa/assets/images/lazy1.jpg',},
-    {defaultImage: '/spa/dist/spa/assets/images/lazy-load.gif', lazyLoad: '/spa/dist/spa/assets/images/m.jpg',},
-    {defaultImage: '/spa/dist/spa/assets/images/lazy-load.gif', lazyLoad: '/spa/dist/spa/assets/images/lazy2.jpg',},
-    {defaultImage: '/spa/dist/spa/assets/images/lazy-load.gif', lazyLoad: '/spa/dist/spa/assets/images/lazy5.jpg',},
-    {defaultImage: '/spa/dist/spa/assets/images/lazy-load.gif', lazyLoad: '/spa/dist/spa/assets/images/lazy3.jpg',},
-    {defaultImage: '/spa/dist/spa/assets/images/lazy-load.gif', lazyLoad: '/spa/dist/spa/assets/images/orig.jpg',},
+    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy_image.jpg',},
+    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy1.jpg',},
+    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/m.jpg',},
+    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy2.jpg',},
+    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy5.jpg',},
+    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy3.jpg',},
+    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/orig.jpg',},
   ]
 
   ngOnChanges() {

@@ -84,7 +84,7 @@ header, footer, div, ul, li {
 }
 
 .gallery {
-  background-image: url("/spa/dist/spa/assets/images/download.jpg");
+  background-image: url("../../../../assets/images/download.jpg");
   background-position: top 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -106,7 +106,7 @@ header, footer, div, ul, li {
   overflow: hidden;
   width: 10%;
   right: 0;
-  background-image: url("/spa/dist/spa/assets/images/scroll.png");
+  background-image: url("../../../../assets/images/scroll.png");
   background-position: top right;
   background-repeat: repeat-y;
   /*background-attachment: fixed;*/
