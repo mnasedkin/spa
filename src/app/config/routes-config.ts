@@ -14,7 +14,8 @@ export const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, data: {breadcrumb: 'Home'}, children: [
       // path: '', component: MainLayoutComponent, children: [
-      {path: '', redirectTo: '/dashboard', pathMatch: 'full'},//Если путь совпадает с корневым роутом, тогда делаем редирект на home
+      // {path: '', redirectTo: '/dashboard', pathMatch: 'full'},//Если путь совпадает с корневым роутом, тогда делаем редирект на home
+      {path: '', component: DashboardComponent, data: {breadcrumb: 'Dashboard', animation: 'DashboardPage'}},
       {path: 'dashboard', component: DashboardComponent, data: {breadcrumb: 'Dashboard', animation: 'DashboardPage'}},
       {path: 'driver-updater', component: DriverUpdaterComponent, data: {breadcrumb: 'Driver Updater', animation: 'UpdatePage'}},
       {path: 'help', component: HelpComponent, data: {breadcrumb: 'Help', animation: 'HelpPage'}},
