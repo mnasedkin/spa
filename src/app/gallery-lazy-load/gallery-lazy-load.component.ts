@@ -73,8 +73,22 @@ export class GalleryLazyLoadComponent implements OnInit {
           if (img.className === 'lazy') {
             img.classList.remove('lazy');
             setTimeout(function () {
-              console.log(i);
+              // console.log(i);
               img.src = img.dataset.src;
+              let duration = 1500;
+              let start = performance.now();
+              requestAnimationFrame(function play(time) {
+                let timeFraction = (time - start) / duration;
+                if (timeFraction > 1) {
+                  timeFraction = 1;
+                }
+                let progress = timeFraction;
+                img.style.opacity = progress;
+                img.style.transform = 'translate(-' + 1 * progress + 'rem, ' + 1 * progress + 'rem)';
+                if (timeFraction < 1) {
+                  requestAnimationFrame(play);
+                }
+              });
             }, 400);
           }
         }
@@ -82,6 +96,22 @@ export class GalleryLazyLoadComponent implements OnInit {
     }
 
     this.getLazyh = getLazyLoadImg(lazyloadImages);
+  }
+
+  /*method for animation with requestAnimationFrame*/
+  animate(_this, draw, duration) {
+    let start = performance.now();
+    requestAnimationFrame(function play(time) {
+      let timeFraction = (time - start) / duration;
+      if (timeFraction > 1) {
+        timeFraction = 1;
+      }
+      let progress = timeFraction;
+      draw(_this, progress);
+      if (timeFraction < 1) {
+        requestAnimationFrame(play);
+      }
+    });
   }
 
 }

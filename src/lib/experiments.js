@@ -3,7 +3,10 @@ class ButtonAnimate {
     for (let i = 0; i < animatedElements.length; i++) {
       this.animate(function (progress) {
         let value = (1 * progress);
-        animatedElements[i].style.opacity = value;
+        if (animatedElements[i]) {
+          animatedElements[i].style.opacity = value;
+          animatedElements[i].style.transform = 'translate(' + 1 * progress + 'rem, ' + 1 * progress + 'rem)';
+        }
       }, 2000);
     }
   }

@@ -93,6 +93,7 @@ header, footer, div, ul, li {
 
 .winzip-animation {
   background-color: #913895;
+  background-image: linear-gradient(to top right, rgb(101, 115, 255), rgb(111, 114, 247), rgb(120, 114, 239), rgb(130, 113, 231), rgb(139, 112, 223), rgb(149, 111, 215), rgb(158, 111, 208), rgb(168, 110, 200), rgb(177, 109, 192), rgb(187, 108, 184), rgb(196, 108, 176), rgb(206, 107, 168));
 }
 /*----- End Styles for this layout -------------------------------------------------*/
 
@@ -227,3 +228,36 @@ header, footer, div, ul, li {
 }
 
 /*------- End button__anchor---------------------------------------------------------------------------------------*/
+
+
+/*------- Start Video ---------------------------------------------------------------------------------------*/
+#video-bg {
+  position: relative;
+  /*overflow: hidden;*/
+  /*z-index: 1;*/
+  /*background: url(bg/daisy-stock-poster.jpg) no-repeat #94a233;*/
+  /*background-size: cover;*/
+}
+
+#video-bg > video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+@supports (object-fit: cover) {
+  #video-bg > video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+/*------- End Video ---------------------------------------------------------------------------------------*/
+
+

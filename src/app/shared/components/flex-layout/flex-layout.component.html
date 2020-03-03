@@ -1,9 +1,16 @@
 <div class="block__container" id="anchor1">
 
-  <div class="block__row header">
-    <router-outlet></router-outlet>
+  <div class="block__row header" id="video-bg">
+    <!--    <router-outlet></router-outlet>-->
+
+
+    <video width="100%" height="auto" preload="auto" autoplay="autoplay" loop="loop">
+      <source src="../../../../assets/video/website.mp4" type="video/mp4">
+    </video>
+
+
     <div class="button__anchor button__anchor--animate">
-        <a  [ngx-scroll-to]="'#anchor2'" [ngx-scroll-to-duration]=2000 class="button_link">Survay the animation</a>
+      <a [ngx-scroll-to]="'#anchor2'" [ngx-scroll-to-duration]=2000 class="button_link">Survay the animation</a>
     </div>
   </div>
 
@@ -15,13 +22,13 @@
 
     <div class="block__column scroll" id='scroll'>
       <div class='scroll__runner' id="scroll_runner">
-        <img src='../../../../assets/images/wz_box.png' >
+        <img src='../../../../assets/images/wz_box.png'>
       </div>
     </div>
 
   </div>
 
-  <div class="block__row winzip-animation"  id="anchor2">
+  <div class="block__row winzip-animation" id="anchor2">
     <app-winzip-animation></app-winzip-animation>
 
     <div class="button__anchor button__anchor--animate">
