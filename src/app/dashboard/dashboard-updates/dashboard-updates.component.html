@@ -2,7 +2,7 @@
   <div class="dashboard-updates">
     <div class="block__column block__column--box-shadow">
       <div class="block__row">
-        <h2 class="dashboard-updates__title">Updates Available <span>{{updatesService.updates.length}}</span></h2>
+        <h2 class="dashboard-updates__title" matBadge="{{updatesService.updates.length}}" matBadgeColor="warn" matBadgeOverlap="true" matBadgeSize="medium" matBadgePosition="after">Updates Available <span></span></h2>
       </div>
       <mat-divider></mat-divider>
       <mat-table [dataSource]="dataSource" class="dashboard-updates__table">

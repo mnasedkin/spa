@@ -8,6 +8,7 @@ header, footer, div, ul, li {
 }
 .block__container {
   padding: 2rem;
+  max-width: 980px;
   font-size: 0.7rem;
 }
 @supports (display: flex) or (display: -webkit-box) {
@@ -22,8 +23,6 @@ header, footer, div, ul, li {
 
     justify-content: center;
     -webkit-justify-content: center;
-
-    max-width: 980px;
 
     align-items: center;
     -webkit-align-content: center;
@@ -124,3 +123,47 @@ color: #44639f;
   align-self: center;
 }
 /*----- End Styles for Links Component -------------------------------------------------*/
+
+/*----- Start Styles for Help Component -------------------------------------------------*/
+.driver-updater {}
+.driver-updater .block__column {
+  display: flex;
+  justify-content: flex-start;
+  overflow: visible;
+}
+.driver-updater .block__row {
+  overflow: visible;
+}
+.driver-updater .block__column .block__text {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+.driver-updater__title {
+  margin-bottom: 0;
+}
+.driver-updater__content {
+  margin-bottom: 5rem;
+}
+.driver-updater__text {
+  margin-right: 3rem;
+  max-width: 500px;
+}
+/*----- End Styles for Help Component -------------------------------------------------*/
+/*--------Start 3d animation ------------------------------------------------------------------------------------*/
+.card {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  transform-style: preserve-3d;
+  transform: translateZ(2em);
+  transition: transform 200ms ease-out;
+  perspective: 75em;
+}
+
+.card__img {
+  position: relative;
+  height: 110%;
+}
+
+/*--------End 3d animation ------------------------------------------------------------------------------------*/
