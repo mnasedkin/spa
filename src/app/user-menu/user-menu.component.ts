@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faCog, faUser } from '@fortawesome/free-solid-svg-icons';
+import {faCog, faQuestionCircle, faUser} from '@fortawesome/free-solid-svg-icons';
 import {ProfileService} from "../profile.service";
 
 @Component({
@@ -18,7 +18,7 @@ export class UserMenuComponent {
     {
       name: 'Help',
       url: '/help',
-      icon: faCog
+      icon: faQuestionCircle,
     }
   ];
   constructor(public profileService: ProfileService) {}
