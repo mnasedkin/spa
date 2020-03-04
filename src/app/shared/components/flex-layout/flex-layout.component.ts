@@ -1,4 +1,4 @@
-import {Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit } from '@angular/core';
  declare var BlockAnimate: any
  declare var ButtonAnimate: any
 
@@ -8,21 +8,28 @@ import {Component, OnInit } from '@angular/core';
   styleUrls: ['./flex-layout.component.css']
 })
 
-export class FlexLayoutComponent implements OnInit {
+export class FlexLayoutComponent implements OnInit, OnDestroy {
+  private element: HTMLElement;
+  private listener: (event) => void;
 
   constructor() {}
 
   ngOnInit(): void {
-    /*-------------Start Document loaded-----------------------------------------------------------------------------*/
-    let element = document.getElementById('header');
-      let startAnimation = new BlockAnimate();
-    element.addEventListener("scroll", function (event) {
+    this.listener = function (event) {
       return startAnimation.init(startAnimation);
-    });
+    };
+    /*-------------Start Document loaded-----------------------------------------------------------------------------*/
+    this.element = document.getElementById('header');
+      let startAnimation = new BlockAnimate();
+    this.element.addEventListener("scroll", this.listener);
     /*-------------End Document loaded -----------------------------------------------------------------------------*/
     let animatedElements = document.getElementsByClassName('button__anchor--animate');
     let buttonManifest = new ButtonAnimate();
     buttonManifest.init(animatedElements);
+  }
+
+  ngOnDestroy(){
+    this.element.removeEventListener('scroll', this.listener);
   }
 
 }

@@ -136,17 +136,20 @@ class BlockAnimate {
     let delta = (clientHeight * (1 - screenStart - screenFinish)) * (runnerPosition / (scrollBoxHeight - runnerHeight));
     // let delta = (clientHeight * (1 - screenStart - screenFinish)) * (runnerPosition / (600 - runnerHeight));
 
-    // console.log({
-    //   delta: delta,
-    //   clientHeight: clientHeight,
-    //   screenStart: screenStart,
-    //   screenFinish: screenFinish,
-    //   runnerPosition: runnerPosition,
-    //   // scrollBoxHeight: scrollBoxHeight,
-    //   runnerHeight: runnerHeight,
-    //   startPosition: startPosition,
-    // });
-
+    console.log({
+      delta: delta,
+      clientHeight: clientHeight,
+      screenStart: screenStart,
+      screenFinish: screenFinish,
+      runnerPosition: runnerPosition,
+      scrollBoxTop: scrollBoxTop,
+      scrollBoxHeight: scrollBoxHeight,
+      runnerHeight: runnerHeight,
+      startPosition: startPosition,
+      scrollBox: scrollBox,
+      runner: runner,
+      this: this,
+    });
 
     runnerPosition = scrollBoxTop + clientHeight * screenStart;
     result = runnerPosition + delta * 1.2;

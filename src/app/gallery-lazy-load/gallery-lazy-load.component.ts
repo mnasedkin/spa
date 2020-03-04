@@ -64,11 +64,8 @@ export class GalleryLazyLoadComponent implements OnInit, OnChanges {
         // console.log(images);
         if (img.getBoundingClientRect().y < (window.innerHeight - 100)) {
           if (img.className === 'lazy') {
-            console.log('[ngStyle]: ', img.id);
-            console.log('[animation]: ', animation[img.id]);
             img.classList.remove('lazy');
             setTimeout(function () {
-              console.log(i);
               img.src = img.dataset.src;
               let duration = 700;
               let start = performance.now();
