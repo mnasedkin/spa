@@ -124,7 +124,7 @@ color: #44639f;
 }
 /*----- End Styles for Links Component -------------------------------------------------*/
 
-/*----- Start Styles for Help Component -------------------------------------------------*/
+/*----- Start Styles for Driver Updater Component -------------------------------------------------*/
 .driver-updater {}
 .driver-updater .block__column {
   display: flex;
@@ -148,6 +148,36 @@ color: #44639f;
 .driver-updater__text {
   margin-right: 3rem;
   max-width: 500px;
+}
+/*----- End Styles for Driver Updater Component -------------------------------------------------*/
+/*----- Start Styles for Help Component -------------------------------------------------*/
+.help .block__row {
+  justify-content: flex-start;
+  max-width: 980px;
+}
+.help .block__text {
+  margin-bottom: 1rem;
+}
+.help h2 {
+  font-size: 2rem;
+}
+.help h3 {
+  font-size: 1.5rem;
+}
+.help h4 {
+  font-size: 1.3rem;
+}
+.help p {
+  font-size: 1.1rem;
+}
+.help li {
+  line-height: 1.7;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+.help img {
+  max-width: 980px;
+  width: 100%;
 }
 /*----- End Styles for Help Component -------------------------------------------------*/
 /*--------Start 3d animation ------------------------------------------------------------------------------------*/
