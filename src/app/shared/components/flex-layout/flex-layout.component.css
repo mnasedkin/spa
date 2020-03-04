@@ -63,7 +63,7 @@ header, footer, div, ul, li {
 /*----- Start Styles for this layout -----------------------------------------------*/
 .header {
   height: 60em;
-  background-image: url("../../../../assets/images/5g.jpg");
+  /*background-image: url("../../../../assets/images/5g.jpg");*/
   background-position: top 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;

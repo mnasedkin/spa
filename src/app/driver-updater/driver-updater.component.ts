@@ -41,7 +41,8 @@ export class DriverUpdaterComponent implements OnInit {
     const calcValue = (a, b) => (a/b*range-range/2).toFixed(1);
     console.log(cards);
     let timeout;
-    document.addEventListener('mousemove', (event) => {
+    let activeAria = document.getElementById('translate');
+    activeAria.addEventListener('mousemove', (event) => {
       console.log(event);
       if (timeout) {
         window.cancelAnimationFrame(timeout);
