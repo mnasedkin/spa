@@ -2,7 +2,7 @@
 
 
   <div class="content__image" *ngFor="let i of img">
-    <img [attr.data-src]="i.lazyLoad" src="{{i.defaultImage}}" alt="city" class="lazy">
+    <img [attr.data-src]="i.lazyLoad" src="{{i.defaultImage}}" alt="city" class="lazy" id="{{i.class}}">
   </div>
 
   <div class="c-direction-block_item c-direction-block_item1">

@@ -10,20 +10,20 @@ import {
   styleUrls: ['./gallery-lazy-load.component.css']
 })
 
-export class GalleryLazyLoadComponent implements OnInit {
-  constructor() {
-  }
+export class GalleryLazyLoadComponent implements OnInit, OnChanges {
+  constructor() { }
 
-  public getLazyh;
   public img = [
-    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy_image.jpg',},
-    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy1.jpg',},
-    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/m.jpg',},
-    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy2.jpg',},
-    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy5.jpg',},
-    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy3.jpg',},
-    {defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/orig.jpg',},
-  ]
+    {class: 0, defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy_image.jpg',},
+    {class: 1, defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy4.jpg',},
+    {class: 2, defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy1.jpg',},
+    {class: 3, defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/m.jpg',},
+    {class: 4, defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy2.jpg',},
+    {class: 5, defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy5.jpg',},
+    {class: 6, defaultImage: '../../assets/images/lazy-load.gif', lazyLoad: '../../assets/images/lazy3.jpg',},
+  ];
+
+  public class: any = 1;
 
   ngOnChanges() {
     console.log('OnChanges');
@@ -32,50 +32,45 @@ export class GalleryLazyLoadComponent implements OnInit {
   ngOnInit(): void {
     /*-------------Start LazyLoad-----------------------------------------------------------------------------*/
     let scrollElement = document.getElementById('header');
-    let lazyloadImages = scrollElement.getElementsByClassName("lazy");
-
     let gallery = document.getElementById('gallery');
-    let lazy = gallery.getElementsByClassName('lazy');
+    let lazyloadImages = gallery.getElementsByClassName('lazy');
 
-    for (let i = 0; i < lazy.length; i++) {
-      let img = lazy[i];
-      if (img.getBoundingClientRect().y < (window.innerHeight - 100)) {
-        if (img.className === 'lazy') {
-          img.classList.remove('lazy');
-          setTimeout(function () {
-            // img.src = img.dataset.src;
-          }, 400);
-        }
-      }
+    let animation = [
+      {opacity: 1, translate: {x: [2, 'em'], y: [1, 'em']}, boxShadow: ['-2px 6px 8px 6px rgba(0,0,0,0.24)']},
+      {opacity: 1, translate: {x: [-2, 'em'], y: [1, 'em']}, boxShadow: ['-2px 6px 8px 6px rgba(0,0,0,0.24)']},
+      {opacity: 1, translate: {x: [4, 'em'], y: [1, 'em']}, boxShadow: ['-2px 6px 8px 6px rgba(0,0,0,0.24)']},
+      {opacity: 1, translate: {x: [2, 'em'], y: [1, 'em']}, boxShadow: ['-2px 6px 8px 6px rgba(0,0,0,0.24)']},
+      {opacity: 1, translate: {x: [-3, 'em'], y: [1, 'em']}, boxShadow: ['-2px 6px 8px 6px rgba(0,0,0,0.24)']},
+      {opacity: 1, translate: {x: [1, 'em'], y: [1, 'em']}, boxShadow: ['-2px 6px 8px 6px rgba(0,0,0,0.24)']},
+      {opacity: 1, translate: {x: [-4, 'em'], y: [1, 'em']}, boxShadow: ['-2px 6px 8px 6px rgba(0,0,0,0.24)']},
+    ];
+
+    function listener() {
+      getLazyLoadImg(lazyloadImages, animation);
     }
 
-    function listener(){getLazyLoadImg(lazyloadImages);}
-    let flex = document.getElementById('anchor1');
-    if (flex === null) {
-      window.removeEventListener("DOMContentLoaded", listener, false);
-      scrollElement.removeEventListener("scroll", listener, false);
-      scrollElement.removeEventListener("resize", listener, false);
-      scrollElement.removeEventListener("orientationChange", listener, false);
-      return;
-    } else {
-      window.addEventListener("DOMContentLoaded", listener);
-      scrollElement.addEventListener("scroll", listener);
-      scrollElement.addEventListener("resize", listener);
-      scrollElement.addEventListener("orientationChange", listener);
-    }
-
+    window.addEventListener("DOMContentLoaded", function () {
+      getLazyLoadImg([lazyloadImages[0]], animation);
+    });
+    scrollElement.addEventListener("scroll", listener);
+    scrollElement.addEventListener("resize", listener);
+    scrollElement.addEventListener("orientationChange", listener);
     /*-------------End LazyLoad -----------------------------------------------------------------------------*/
 
-    function getLazyLoadImg(images) {
+
+    function getLazyLoadImg(images, animation) {
       for (let i = 0; i < images.length; i++) {
         let img = images[i];
+        // console.log(images);
         if (img.getBoundingClientRect().y < (window.innerHeight - 100)) {
           if (img.className === 'lazy') {
+            console.log('[ngStyle]: ', img.id);
+            console.log('[animation]: ', animation[img.id]);
             img.classList.remove('lazy');
             setTimeout(function () {
-              // console.log(i);
+              console.log(i);
               img.src = img.dataset.src;
-              let duration = 1500;
+              let duration = 700;
               let start = performance.now();
               requestAnimationFrame(function play(time) {
                 let timeFraction = (time - start) / duration;
@@ -83,19 +78,18 @@ export class GalleryLazyLoadComponent implements OnInit {
                   timeFraction = 1;
                 }
                 let progress = timeFraction;
-                img.style.opacity = progress;
-                img.style.transform = 'translate(-' + 1 * progress + 'rem, ' + 1 * progress + 'rem)';
+                img.style.opacity = animation[img.id].opacity * progress;
+                img.style.transform = 'translate(' + animation[img.id].translate.x[0] * (1 / progress) + animation[img.id].translate.x[1] + ', ' + animation[img.id].translate.y[0] * progress + animation[img.id].translate.y[1] + ')';
+                img.style.boxShadow = '-2px 6px 8px 6px rgba(0,0,0, ' + 0.24 * progress + ')';
                 if (timeFraction < 1) {
                   requestAnimationFrame(play);
                 }
               });
-            }, 400);
+            }, 800);
           }
         }
       }
     }
-
-    this.getLazyh = getLazyLoadImg(lazyloadImages);
   }
 
   /*method for animation with requestAnimationFrame*/
