@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap');
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Nunito Sans', "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Nunito Sans', 'Helvetica Neue', sans-serif; }
 .app-loading {
   position: relative;
   display: flex;

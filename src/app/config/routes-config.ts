@@ -20,7 +20,7 @@ export const routes: Routes = [
       {path: 'driver-updater', component: DriverUpdaterComponent, data: {breadcrumb: 'Driver Updater', animation: 'UpdatePage'}},
       {path: 'help', component: HelpComponent, data: {breadcrumb: 'Help', animation: 'HelpPage'}},
       {path: 'settings', component: SettingsComponent, data: {breadcrumb: 'Settings', animation: 'SettingsPage'}},
-      {path: 'winapi', component: WinapiComponent, data: {breadcrumb: 'Windows API',animation: 'WinapiPage' }},
+      // {path: 'winapi', component: WinapiComponent, data: {breadcrumb: 'Windows API',animation: 'WinapiPage' }},
     ]
   },
   {

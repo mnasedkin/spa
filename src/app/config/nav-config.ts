@@ -10,6 +10,6 @@ export const ITEMS: SpaNavItems = {
     bottom: [
       {url: '/help/', name: 'Help', icon: faQuestionCircle},
       {url: '/settings/', name: 'Settings', icon: faCog},
-      {url: '/winapi/', name: 'Windows API', icon: faWindowRestore}
+      // {url: '/winapi/', name: 'Windows API', icon: faWindowRestore}
     ]
   };
