@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1583398114408,
+  "timestamp": 1583399114020,
   "index": "/spa/dist/spa/index.html",
   "assetGroups": [
     {
@@ -10,15 +10,15 @@
       "urls": [
         "/spa/dist/spa/favicon.ico",
         "/spa/dist/spa/index.html",
-        "/spa/dist/spa/main-es2015.e0201c634b2d1ff2dcce.js",
-        "/spa/dist/spa/main-es5.e0201c634b2d1ff2dcce.js",
+        "/spa/dist/spa/main-es2015.9ffc5fd11a1857298b76.js",
+        "/spa/dist/spa/main-es5.9ffc5fd11a1857298b76.js",
         "/spa/dist/spa/manifest.webmanifest",
         "/spa/dist/spa/polyfills-es2015.8c58a9e8b73e624c0989.js",
         "/spa/dist/spa/polyfills-es5.e2e9884e6ddc3d273129.js",
         "/spa/dist/spa/runtime-es2015.44f7a62596b3847c435b.js",
         "/spa/dist/spa/runtime-es5.44f7a62596b3847c435b.js",
         "/spa/dist/spa/scripts.8db986342f0356233859.js",
-        "/spa/dist/spa/styles.b5805c449d9056b85c83.css"
+        "/spa/dist/spa/styles.a4c513e59ef93419da53.css"
       ],
       "patterns": []
     },
@@ -95,9 +95,9 @@
     "/spa/dist/spa/assets/video/website.mp4": "997ef333596ea69f454c894719a4945e2ed1bfba",
     "/spa/dist/spa/download.6270e566720232a155f0.jpg": "da126c47ddeeeb3d255492f56822c5f8aa69825e",
     "/spa/dist/spa/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/spa/dist/spa/index.html": "264e01d830c5764c173dd89917233c7d488f4118",
-    "/spa/dist/spa/main-es2015.e0201c634b2d1ff2dcce.js": "f152b7ae24d8b23fd9c537919156fe3a0e6f3410",
-    "/spa/dist/spa/main-es5.e0201c634b2d1ff2dcce.js": "fcfcba80e47b564bb7829bdb5ad4432879faf025",
+    "/spa/dist/spa/index.html": "09d3cc9dbcba4e896e9dac46a1cb0055ac072574",
+    "/spa/dist/spa/main-es2015.9ffc5fd11a1857298b76.js": "7d7a361e7359aac8dfbfc0d115da7b2ec3467955",
+    "/spa/dist/spa/main-es5.9ffc5fd11a1857298b76.js": "fad39e5f01174fdfb5dce461b009760662ad21a4",
     "/spa/dist/spa/manifest.webmanifest": "36703eb209390c83a6d27534b8bbd6576424fa74",
     "/spa/dist/spa/polyfills-es2015.8c58a9e8b73e624c0989.js": "8779ed8d9bf0580e1b50b352a9b8fd520be24433",
     "/spa/dist/spa/polyfills-es5.e2e9884e6ddc3d273129.js": "29c3dfd16faa921dd49165f318f9eed12a2f3be7",
@@ -105,7 +105,7 @@
     "/spa/dist/spa/runtime-es5.44f7a62596b3847c435b.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/spa/dist/spa/scripts.8db986342f0356233859.js": "6c358bab629e9a503b7fe239b5f48c0231b87b0f",
     "/spa/dist/spa/scroll.2e0cc811593304efd7cd.png": "ea460be11a4f810658753c30164b77adbcf33a2e",
-    "/spa/dist/spa/styles.b5805c449d9056b85c83.css": "470e408c72ff3dd56a9f78345f363599322aea41"
+    "/spa/dist/spa/styles.a4c513e59ef93419da53.css": "470e408c72ff3dd56a9f78345f363599322aea41"
   },
   "navigationUrls": [
     {
